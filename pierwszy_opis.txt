@@ -1,0 +1,72 @@
+Przestrzeń za wejściem
+
+Nazwa: [text] // name=text
+Opis przestrzeni: [text] // description=text
+- [ ] Plan dotykowy rozmieszczenia pomieszczeń znajduje się [text]. // isTactilePlan=true/false (rozszerzenie)
+- [ ] Plan rozmieszczenia pomieszczeń znajduje się w [text] i jest wykonany w kontrastowych kolorach oraz dużymi czcionkami. // isLargePrintPlan=true/false (rozszerzenie)
+- [ ] W pomieszczeniu zamontowany jest system dźwiękowy [text]. // isAudioInformationSystem=true/false (rozszerzenie)
+- [ ] Ścieżka dotykowa prowadzi do [text]. // hasTactileGuideStrips=true/false
+- [ ] Przestrzeń jest zazwyczaj cicha i spokojna. // isQuiet=true/false
+- [ ] Pomieszczenie jest dobrze oświetlone. // isWellLit=true/false
+- [ ] Punkt obsługi znajduje się [text].
+- Punkt obsługi wyposażony jest w pętlę indukcyjną. // hasInductionLoop= true/false
+- [ ] W punkcie obsługi dostępna jest usługa tłumaczenia na język migowy. // hasSignLanguageInterpretation=true/false (rozszerzenie)
+- [ ] Blat jest obniżony i może do niego podjechać osoba na wózku.
+
+Ciągi  poziome
+(jednokrotny wybór)
+- [ ] Wszystkie pomieszczenia znajdują się na tym samym poziomie i na jednej kondygnacji.
+- [ ] Pomieszczenia znajdują się na jednej kondygnacji, ale na różnych poziomach.
+- [ ] Pomieszczenia znajdują się na [number] kondygnacjach.
+
+(jednokrotny wybór)
+- [ ] Różnice poziomów można pokonać za pomocą pochylni o maksymalnym nachyleniu [slopeAngle]%. //
+- [ ] Różnice poziomów można pokonać za pomocą pochylni o maksymalnym nachyleniu [slopeAngle]% lub platformy przyschodowej. //
+- [ ] Część korytarzy nie jest dostępna dla osób poruszających się na wózkach. //
+- Wszystkie korytarze są niedostępne dla osób na wózkach. //
+
+
+
+Ciągi pionowe
+(wielokrotny wybór)
+- [ ] Na inne kondygnacje możesz się dostać za pomocą schodów. //schody - okno modalne
+- [ Możesz skorzystać z windy. // winda - okno modalne
+
+Schody
+Nazwa: [name]
+Ciąg schodów składa się z {count] stopni.
+Stopień ma wysokość [stepHeight] centymetrów.
+Przy schodach znajduje się poręcz wzdłuż całego ciągu. // hasHandRail=true/false
+- [ ] Stopnie są oznaczone kontrastowo // . hasHighContrastNosing=true/false
+Przed schodami znajdują się dotykowe pasy ostrzegawcze. // hasTactileSafetyStrips=true/false
+
+Winda
+Nazwa: [name]
+Drzwi
+obiekt: door
+(jednokrotny wybór)
+- [ ] Drzwi windy otwierają się automatycznie. // isAutomaticOrAlwaysOpen=true
+- [ ] Drzwi musisz otworzyć ręcznie. // isAutomaticOrAlwaysOpen=false
+
+- [ ] Szerokość drzwi wynosi [width] centymetrów.
+
+obiekt: EquipmentProperties
+jednokrotny wybór
+- [ ] Winda znajduje się w budynku. // isIndoors=true
+- [ ] Winda znajduje się poza budynkiem. // isIndoors=false
+
+Windę znajdziesz [text] // description
+
+Kabina windy ma głębokość [cabinLength] centymetrów i szerokość [cabinWidth] centymetrów.
+- [ ] Przyciski sterujące mają opisy w alfabecie Braille’a. // hasBrailleText=true/false
+- [ ] Przyciski sterujące mają duże  oznaczenia. // hasLargePrint=true/false
+- [ ] Oznaczenia są kontrastowe. // isHighContrast=true/false
+Najniższe przyciski sterujące znajdują się na wysokości [heightOfControls] centymetrów.
+- [ ] W windzie są komunikaty głosowe. // hasSpeech=true/false
+- [ ] W razie problemów - zadzwoń do obsługi na numer telefonu: [servicePhoneNumber].
+
+Pomieszczenia
+jednokrotny wybór
+- [ ] Wszystkie pomieszczenia są dostępne dla osób na wózkach.
+- [ ] Około [number]% pomieszczeń jest dostępnych dla osób na wózkach.
+- [ ] Pomieszczenia nie są dostępne dla osób na wózkach.
