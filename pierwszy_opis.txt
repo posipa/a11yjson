@@ -1,3 +1,31 @@
+Budynek 
+PlaceInfo
+properties (na razie tylko to
+name
+Nazwa budynku [text]
+
+- [ ] description
+Opis budynku: [textarea]
+- [ ] Dodaj zdjęcie [file]
+address (listy wyboru, jeżeli są słowniki. Jeżeli nie, to pola tekstowe i wtedy możemy wyrzucić województwo i powiat.)
+country
+[text=POL] - raczej nie do edycji.
+state
+Województwo [list]
+county
+Powiat [list]
+city
+Miejscowość [list]
+postalCode
+Kod pocztowy [**-***]
+street
+Ulica [list]
+house
+Numer budynku [text]
+level
+- [ ] Piętro [text]
+
+
 Przestrzeń za wejściem
 
 Nazwa: [text] // name=text
