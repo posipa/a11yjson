@@ -1,0 +1,90 @@
+<form>
+<fieldset>
+<legend>Wejścia</legend>
+
+<button>Opis wejścia</button>
+<fieldset>
+<legend>Opis wejścia</legend>
+<label><input type="text" name="name">nazwa wejścia</label>
+<label><input type="checkbox" name="isMainEntrance">to jest główne wejście</label>
+<label><input type="checkbox" name="isLevel">wejście jest na poziomie gruntu i nie ma progu wyższego niż 2 centymetry</label>
+<label><input type="checkbox" name="hasFixedRamp">stała pochylnia</label>
+<label><input type="checkbox" name="hasRemovableRamp">przenośna pochylnia</label>
+</fieldset>
+<button>Opis schodów</button>
+<fieldset>
+<legend>Opis schodów</legend>
+<label><input type="text" name="name">nazwa schodów</label>
+<label><input type="number" name="count">liczba schodów w jednym ciągu</label>
+<label><input type="checkbox" name="isRegular">schody są proste</label>
+<label><input type="number" name="stepHeight">wysokość stopnia</label>
+<label><input type="number" name="stepDepth">głębokość stopnia</label>
+<label><input type="number" name="stepWidth">szerokość stopnia</label>
+<label><input type="checkbox" name="hasHighContrastNosing">krawędzie stopni są oznaczone kontrastowo</label>
+<label><input type="checkbox" name="hasTactileSafetyStrips">pasy ostrzegawcze przed schodami</label>
+<label><input type="checkbox" name="hasHandRail">schody mają poręcze</label>
+<label><input type="checkbox" name="hasAntiSlipNosing">stopnie są wykonane z materiału antypoślizgowego</label>
+</fieldset>
+<button>Opis drzwi</button>
+<fieldset>
+<legend>Opis drzwi</legend>
+<label><input type="checkbox" name="isRevolving">drzwi są obrotowe</label>
+<label><input type="checkbox" name="isAutomaticOrAlwaysOpen">drzwi są zawsze otwarte lub otwierają się automatycznie</label>
+<label><input type="checkbox" name="doorOpensToOutside">drzwi otwierają się na zewnątrz</label>
+<label><input type="checkbox" name="hasErgonomicDoorHandle">klamka jest ergonomiczna i wygodna w użyciu</label>
+<label><input type="checkbox" name="isEasyToOpen">drzwi otwierają się lekko</label>
+<label><input type="checkbox" name="isEasyToHoldOpen">drzwi można łatwo utrzymać w pozycji otwartej</label>
+<label><input type="number" name="turningSpaceInFront">przestrzeń manewrowa w centymetrach</label>
+<label><input type="number" name="width">szerokość drzwi</label>
+<label><input type="checkbox" name="hasClearMarkingOnGlassDoor">przeźroczyste drzwi są oznakowane kontrastowo</label>
+<! to do rozbudowania>
+</fieldset>
+<fieldset>
+<legend>Obsługa</legend>
+<label><input type="checkbox" name="canSeeVisitorsFromInside">pracownik widzi gości z wewnątrz</label>
+<label><input type="checkbox" name="hasFreeAssistantForVisitors">pracownik może asystować gościom</label>
+<label><input type="checkbox" name="spokenLanguages" value="PJM">pracownik komunikuje się w języku migowym (PJM)</label>
+<label><input type="textarea" name="serviceContact">Kontakt z obsługą</label>
+</fieldset>
+<fieldset>
+<legend>Informacje o rozmieszczeniu pomieszczeń zgodnie z ustawą o zapewnieniu dostępności</legend>
+<!cały blok dodany przeze mnie>
+
+<label><input type="checkbox" name="hasTactilePlan">plan dotykowy</label>
+<label><input type="checkbox" name="hasLargePrintPlan">plan ma duże litery</label>
+<label><input type="checkbox" name="hasHighContrastPlan">plan jest w kontrastowych kolorach</label>
+<label><input type="checkbox" name="hasAudioSystem">informacja dźwiękowa o rozmieszczeniu pomieszczeń</label>
+</fieldset>
+<fieldset>
+<legend>Pozostałe informacje</legend>
+<label><input type="checkbox" name="hasTactileGuideStrips">dotykowe ścieżki prowadzące dla osób niewidomych</label>
+<label><input type="checkbox" name="hasInductionLoop">zainstalowana pętla indukcyjna</label>
+<label><input type="checkbox" name="hasSignLanguageService">usługa tłumaczenia online na PJM</label> <! dodane przeze mnie >
+<label><input type="checkbox" name="isQuiet">miejsce jest ciche</label>
+<label><input type="checkbox" name="isWellLit">miejsce jest dobrze oświetlone</label>
+</fieldset>
+<fieldset>
+<legend>Zwierzęta</label>
+<! ten blok na początku z pytaniem o powielenie do innych miejsc >
+<label><input type="checkbox" name="allowsGuideDogs">można wchodzić z psem przewodnikiem lub psem asystującym</label>
+<label><input type="textarea" name="noDogsDescription">uzasadnij zakaz wchodzenia z psami przewodnikami lub asystującymi</label>
+<label><input type="checkbox" name="suppliesWaterForPets">zapewniamy wodę dla psa</legend>
+<label>
+</fieldset>
+<fieldset>
+<legend>Parking</legend>
+<label><input type="checkbox" name="parking">mamy parking</label>
+<! blok na początku z pytaniem o to, czy należy do całego budynku i powieleniem na inne miejsca >
+<label><input type="number" name="countOfAllSlots">liczba wszystkich miejsc parkingowych</label>
+<label><input type="number" name="count">liczba miejsc parkingowych dla osób niepełnosprawnych</label>
+<label><input type="number" name="distanceToEntrance">odległość do wejścia w metrach</legend>
+<label><input type="number" name="width">szerokość miejsca parkingowego w metrach</label>
+<label><input type="number" name="length">długość miejsca parkingowego w metrach</label>
+<label><input type="checkbox" name="hasDedicatedSignage">miejsce parkingowe jest prawidłowo oznakowane</label>
+<label><input type="checkbox" name="isLocatedInside">parking podziemny
+<label><input type="text" name="location">Opis usytuowania parkingu</label>
+<label><input type="checkbox" name="paymentBySpace">parking jest płatny</label>
+
+</fieldset>
+
+</form>
