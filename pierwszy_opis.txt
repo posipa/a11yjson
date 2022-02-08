@@ -37,13 +37,13 @@ Opis przestrzeni: [text] // description=text
 - [ ] Przestrzeń jest zazwyczaj cicha i spokojna. // isQuiet=true/false
 - [ ] Pomieszczenie jest dobrze oświetlone. // isWellLit=true/false
 - [ ] Punkt obsługi znajduje się [text].
-- Punkt obsługi wyposażony jest w pętlę indukcyjną. // hasInductionLoop= true/false
+- [ ] Punkt obsługi wyposażony jest w pętlę indukcyjną. // hasInductionLoop= true/false
 - [ ] W punkcie obsługi dostępna jest usługa tłumaczenia na język migowy. // hasSignLanguageInterpretation=true/false (rozszerzenie)
 - [ ] Blat jest obniżony i może do niego podjechać osoba na wózku.
 
 Ciągi  poziome
 (jednokrotny wybór)
-- [ ] Wszystkie pomieszczenia znajdują się na tym samym poziomie i na jednej kondygnacji.
+- [ ] Wszystkie pomieszczenia znajdują się na tym samym poziomie i na jednej kondygnacji, nie dotyczy wejścia i przestrzeni za wejściem.
 - [ ] Pomieszczenia znajdują się na jednej kondygnacji, ale na różnych poziomach.
 - [ ] Pomieszczenia znajdują się na [number] kondygnacjach.
 
@@ -54,15 +54,14 @@ Ciągi  poziome
 - Wszystkie korytarze są niedostępne dla osób na wózkach. //
 
 
-
 Ciągi pionowe
 (wielokrotny wybór)
-- [ ] Na inne kondygnacje możesz się dostać za pomocą schodów. //schody - okno modalne
-- [ Możesz skorzystać z windy. // winda - okno modalne
+- [ ] Na inne kondygnacje możesz się dostać za pomocą schodów. //schody
+- [ ] Możesz skorzystać z windy. // winda
 
 Schody
 Nazwa: [name]
-Ciąg schodów składa się z {count] stopni.
+Ciąg schodów składa się z [count] stopni.
 Stopień ma wysokość [stepHeight] centymetrów.
 Przy schodach znajduje się poręcz wzdłuż całego ciągu. // hasHandRail=true/false
 - [ ] Stopnie są oznaczone kontrastowo // . hasHighContrastNosing=true/false
