@@ -25,6 +25,53 @@ Numer budynku [text]
 level
 - [ ] Piętro [text]
 
+Parkingi
+<fieldset>
+<legend>Miejsca parkingowe dla osób niepełnosprawnych</legend>
+<label><input type="radio" name=forWheelchairUsers"" value="true"Możesz skorzystać z miejsca parkingowego. Na parkingu wyznaczyliśmy [number] miejsc przeznaczonych dla osób niepełnosprawnych. Pamiętaj o zabraniu karty parkingowej i umieszczeniu jej za szybą.</label>
+<label><input type="radio" name="forWheelchairUsers" value="false">Nie mamy wyznaczonych miejsc parkingowych dla osób niepełnosprawnych.</label>
+<label><input type="radio" name="" value="">Nie mamy parkingu.</label>
+</fieldset>
+<label><input type="checkbox" name="hasDedicatedSignage">Miejsca parkingowe są pomalowane na niebiesko i prawidłowo oznakowane.</label>
+<label>Od miejsca parkingowego do wejścia do budynku odległość wynosi około <input type="number" name="distanceToEntrance"> metrów.</label>
+</fieldset>
+<fieldset>
+<legend>Odpłatność za parking</legend>
+<label><input type="radio" name="paymentBySpace" value="false">Parking jest bezpłatny.</label>
+<label><input type="radio" name="paymentBySpace" value="false">Parking jest bezpłatny dla osób posiadających kartę parkingową.</label>
+<label><input type="radio" name="paymentBySpace" value="true">Parking jest płatny.</label>
+</fieldset>
+<label>Opis usytuowania parkingu<input type="text" name="location" placeholder="Miejsca parkingowe znajdują się na dziedzińcu. Można na niego wjechać przez bramę. Szlaban otwiera strażnik, po okazaniu przepustki."></label>
+
+<label><input type="checkbox" name="allowsGuideDogs" value="true">Możesz przyjść z psem asystującym lub psem przewodnikiem. Pamiętaj o certyfikacie psa asystującego i zaświadczeniu o szczepieniu.</label>
+<label><input type="checkbox" name="dogsNeedMuzzle" value="true">Pies musi mieć kaganiec. Nie dotyczy psów przewodników.</label>
+<label><input type="checkbox" name="suppliesWaterForPets" value="true">Zapewniamy wodę dla zwierzaka.</label>
+
+Wejście główne
+[] Wejście jest na poziomie gruntu. Nie maprzeszkód, by wjechać na wózku.
+[] Do wejścia prowadzą schody.
+	[] Przed schodami znajduje się pas ostrzegawczy wykonany z wypukłych elementów.
+	[] Stopnie są  oznaczone kontrastowo.
+	[] Przy schodach znajduje się poręcz.
+[] Do wejścia doprowadzona jest stała pochylnia o nachyleniu [number]%.
+[] Istnieje możliwość rozłożenia przenośnej rampy. Zawiadom nas o tym wcześniej.
+[] Różnicę wysokości możesz pokonać za pomocą platformy przyschodowej.
+Dodatkowe informacje [text]
+Przestrzeń manewrowa przed wejściem wynosi [number] centymetrów.
+[] Drzwi są obrotowe.
+[] Drzwi otwierają się automatycznie.
+[] Drzwi są zawsze otwarte.
+[] Drzwi musisz otworzyć ręcznie.
+[] Otwierają się na zewnątrz.
+[] Otworzenie drzwi nie wymaga dużej siły.
+[] Otworzenie drzwi wymaga dużej siły.
+[] Drzwi mają wygodną i ergonomiczną klamkę.
+[] Można je łatwo utrzymać w pozycji otwartej.
+Szerokość otworu wejściowego wynosi [number] centymetrów.
+[] Drzwi są przeźroczyste i [są/nie są] kontrastowo oznaczone.
+[] Skorzystaj z dzwonka przy drzwiach.
+[] Skorzystaj z domofonu przy drzwiach.
+[] Jeżeli nie możesz skorzystać z głównego wejścia, [text].
 
 Przestrzeń za wejściem
 
