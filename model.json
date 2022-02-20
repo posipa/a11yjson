@@ -1,0 +1,587 @@
+[
+    {
+        "model": "arch",
+        "label": "Dost\u0119pno\u015b\u0107 architektoniczna",
+        "desc": "W sekcji \"Dost\u0119pno\u015b\u0107 architektoniczna\" podmiot publiczny deklaruje dost\u0119pno\u015b\u0107 architektoniczn\u0105 swojej siedziby. <br />Podaje przy tym adres lub adresy, je\u017celi lokalizacji jest kilka, do ka\u017cdej tworz\u0105c oddzielne opisy.",
+        "children": [
+            {
+                "model": "parking",
+                "type": "fieldset",
+                "label": "Parking",
+                "children": [
+                    {
+                        "type": "radio",
+                        "label": "Miejsca parkingowe dla os\u00f3b niepe\u0142nosprawnych",
+                        "model": "forWheelchairUsers",
+                        "options": {
+                            "1": "Mo\u017cesz skorzysta\u0107 z miejsca parkingowego. Na parkingu wyznaczyli\u015bmy [number] miejsc przeznaczonych dla os\u00f3b niepe\u0142nosprawnych. Pami\u0119taj o zabraniu karty parkingowej i umieszczeniu jej za szyb\u0105.",
+                            "2": "Nie mamy wyznaczonych miejsc parkingowych dla os\u00f3b niepe\u0142nosprawnych.",
+                            "3": "Nie mamy parkingu."
+                        },
+                        "binding": {
+                            "number": {
+                                "type": "nubmer",
+                                "label": "Licza miejsc parkingowych przeznaczonych dla os\u00f3b niepe\u0142osprawnych",
+                                "model": "forWheelchairUsersCount"
+                            }
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Miejsca parkingowe s\u0105 pomalowane na niebiesko i prawid\u0142owo oznakowane.",
+                        "model": "hasDedicatedSignage"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Od miejsca parkingowego do wej\u015bcia do budynku odleg\u0142o\u015b\u0107 wynosi oko\u0142o [number] metr\u00f3w.",
+                        "model": "distanceToEntrance",
+                        "binding": {
+                            "number": {
+                                "type": "nubmer",
+                                "label": "Odleg\u0142o\u015b\u0107 parkingu od wej\u015bcia",
+                                "model": "distanceToEntranceCount"
+                            }
+                        }
+                    },
+                    {
+                        "type": "radio",
+                        "label": "Odp\u0142atno\u015b\u0107 za parking",
+                        "model": "paymentBySpace",
+                        "options": {
+                            "1": "Parking jest bezp\u0142atny.",
+                            "2": "Parking jest bezp\u0142atny dla os\u00f3b posiadaj\u0105cych kart\u0119 parkingow\u0105.",
+                            "3": "Parking jest p\u0142atny."
+                        }
+                    },
+                    {
+                        "type": "textarea",
+                        "label": "Opis usytuowania parkingu",
+                        "desc": "Miejsca parkingowe znajduj\u0105 si\u0119 na dziedzi\u0144cu. Mo\u017cna na niego wjecha\u0107 przez bram\u0119. Szlaban otwiera stra\u017cnik, po okazaniu przepustki.",
+                        "model": "parkingLocation"
+                    }
+                ]
+            },
+            {
+                "model": "dog",
+                "type": "fieldset",
+                "label": "Pies asystuj\u0105cy",
+                "children": [
+                    {
+                        "type": "bool",
+                        "label": "Mo\u017cesz przyj\u015b\u0107 z psem asystuj\u0105cym lub psem przewodnikiem. Pami\u0119taj o certyfikacie psa asystuj\u0105cego i za\u015bwiadczeniu o szczepieniu.",
+                        "model": "allowsGuideDogs"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Pies musi mie\u0107 kaganiec. Nie dotyczy ps\u00f3w przewodnik\u00f3w.",
+                        "model": "dogsNeedMuzzle"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Zapewniamy wod\u0119 dla zwierzaka.",
+                        "model": "suppliesWaterForPets"
+                    }
+                ]
+            },
+            {
+                "model": "entrance",
+                "type": "fieldset",
+                "label": "Wej\u015bcie do budynku",
+                "children": [
+                    {
+                        "type": "bool",
+                        "label": "Wej\u015bcie jest na poziomie gruntu. Nie maprzeszk\u00f3d, by wjecha\u0107 na w\u00f3zku.",
+                        "model": "entranceOnGroundLevel"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Do wej\u015bcia prowadz\u0105 schody.",
+                        "model": "stairsLeadToEntrance"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Przed schodami znajduje si\u0119 pas ostrzegawczy wykonany z wypuk\u0142ych element\u00f3w.",
+                        "model": "bumbBeforeStairs",
+                        "logic": {
+                            "stairsLeadToEntrance": ":ischecked"
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Stopnie s\u0105 oznaczone kontrastowo.",
+                        "model": "stairsAreContrasted",
+                        "logic": {
+                            "stairsLeadToEntrance": ":ischecked"
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Przy schodach znajduje si\u0119 por\u0119cz.",
+                        "model": "handLeadAlongStairs",
+                        "logic": {
+                            "stairsLeadToEntrance": ":ischecked"
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Do wej\u015bcia doprowadzona jest sta\u0142a pochylnia o nachyleniu [number]%.",
+                        "model": "pochylniaONachyleniu",
+                        "binding": {
+                            "number": {
+                                "type": "nubmer",
+                                "label": "Warto\u015b\u0107 nachylenia",
+                                "model": "stairsLeadToEntrance1212"
+                            }
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Istnieje mo\u017cliwo\u015b\u0107 roz\u0142o\u017cenia przeno\u015bnej rampy. Zawiadom nas o tym wcze\u015bniej.",
+                        "model": "mozliwoscPrzenosnejRampy"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "R\u00f3\u017cnic\u0119 wysoko\u015bci mo\u017cesz pokona\u0107 za pomoc\u0105 platformy przyschodowej.",
+                        "model": "jestPlatformaPrzyschodowa"
+                    },
+                    {
+                        "type": "textarea",
+                        "label": "Dodatkowe informacje",
+                        "model": "extraData"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Przestrze\u0144 manewrowa przed wej\u015bciem wynosi [number] centymetr\u00f3w.",
+                        "model": "przestrzenManewrowaPrzedWejsciem",
+                        "binding": {
+                            "number": {
+                                "type": "nubmer",
+                                "label": "Wielko\u015b\u0107 przestrzeni manewrowej",
+                                "model": "wielkoscPrzestrzeniManewrowej"
+                            }
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Drzwi s\u0105 obrotowe.",
+                        "model": "whereDoor"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Drzwi otwieraj\u0105 si\u0119 automatycznie.",
+                        "model": "autoDoor"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Drzwi s\u0105 zawsze otwarte.",
+                        "model": "alwaysOpened"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Drzwi musisz otworzy\u0107 r\u0119cznie.",
+                        "model": "mustHandOpen"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Otwieraj\u0105 si\u0119 na zewn\u0105trz.",
+                        "model": "openToOutside"
+                    },
+                    {
+                        "type": "radio",
+                        "label": "Otwieraj\u0105 si\u0119 na zewn\u0105trz.",
+                        "model": "openToOutside",
+                        "options": {
+                            "1": "Otworzenie drzwi nie wymaga du\u017cej si\u0142y.",
+                            "2": "Otworzenie drzwi wymaga du\u017cej si\u0142y."
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Drzwi maj\u0105 wygodn\u0105 i ergonomiczn\u0105 klamk\u0119.",
+                        "model": "handyHandle"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Mo\u017cna je \u0142atwo utrzyma\u0107 w pozycji otwartej.",
+                        "model": "easyToHold"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Szeroko\u015b\u0107 otworu wej\u015bciowego wynosi [number] centymetr\u00f3w.",
+                        "model": "widthOfOpenDoors",
+                        "binding": {
+                            "number": {
+                                "type": "nubmer",
+                                "label": "Szeroko\u015b\u0107 w cm",
+                                "model": "widthOfOpenDoorsNumber"
+                            }
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Drzwi s\u0105 prze\u017aroczyste i [boolen] kontrastowo oznaczone.",
+                        "model": "transparentDoors",
+                        "binding": {
+                            "boolen": {
+                                "type": "select",
+                                "label": "Czy drzwi s\u0105 kontrastowo oznaczone",
+                                "model": "areDoorsOznakowane",
+                                "options": {
+                                    "s\u0105": "s\u0105",
+                                    "nie s\u0105": "nie s\u0105"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Skorzystaj z dzwonka przy drzwiach.",
+                        "model": "useDoorBell"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Skorzystaj z domofonu przy drzwiach.",
+                        "model": "useDomofon"
+                    },
+                    {
+                        "type": "textarea",
+                        "label": "Je\u017celi nie mo\u017cesz skorzysta\u0107 z g\u0142\u00f3wnego wej\u015bcia",
+                        "model": "ifCantUseEntrance"
+                    }
+                ]
+            },
+            {
+                "model": "lobby",
+                "type": "fieldset",
+                "label": "Przestrze\u0144 za wej\u015bciem",
+                "children": [
+                    {
+                        "type": "textarea",
+                        "label": "Opis przestrzeni",
+                        "model": "lobbyDesc"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Plan dotykowy rozmieszczenia pomieszcze\u0144 znajduje si\u0119 [text]",
+                        "model": "isTactilePlan",
+                        "binding": {
+                            "text": {
+                                "type": "text",
+                                "label": "opis lokalizacji palnu dotykowego",
+                                "model": "isTactilePlanDesc"
+                            }
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Plan rozmieszczenia pomieszcze\u0144 znajduje si\u0119 w [text] i jest wykonany w kontrastowych kolorach oraz du\u017cymi czcionkami.",
+                        "model": "isLargePrintPlan",
+                        "binding": {
+                            "text": {
+                                "type": "text",
+                                "label": "opis lokalizacji palnu rozmieszcze\u0144",
+                                "model": "isLargePrintPlanDesc"
+                            }
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "W pomieszczeniu zamontowany jest system d\u017awi\u0119kowy [text]",
+                        "model": "isAudioInformationSystem",
+                        "binding": {
+                            "text": {
+                                "type": "text",
+                                "label": "Rodzaj systemu d\u017awi\u0119kowego",
+                                "model": "isAudioInformationSystemDesc"
+                            }
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "\u015acie\u017cka dotykowa prowadzi do [text]",
+                        "model": "hasTactileGuideStrips",
+                        "binding": {
+                            "text": {
+                                "type": "text",
+                                "label": "Gdzie kieruje \u015bcie\u017cka dotykowa",
+                                "model": "hasTactileGuideStripsDesc"
+                            }
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Przestrze\u0144 jest zazwyczaj cicha i spokojna.",
+                        "model": "isQuiet"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Pomieszczenie jest dobrze o\u015bwietlone.",
+                        "model": "isWellLit"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Punkt obs\u0142ugi znajduje si\u0119 [text]",
+                        "model": "customerServiceLocation",
+                        "binding": {
+                            "text": {
+                                "type": "text",
+                                "label": "Gdzie znajduje si\u0119 punkt obs\u0142ugi.",
+                                "model": "customerServiceLocationDesc"
+                            }
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Punkt obs\u0142ugi wyposa\u017cony jest w p\u0119tl\u0119 indukcyjn\u0105. ",
+                        "model": "hasInductionLoop"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "W punkcie obs\u0142ugi dost\u0119pna jest us\u0142uga t\u0142umaczenia na j\u0119zyk migowy.",
+                        "model": "hasSignLanguageInterpretation"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Blat jest obni\u017cony i mo\u017ce do niego podjecha\u0107 osoba na w\u00f3zku.",
+                        "model": "isDeskProperHeight"
+                    }
+                ]
+            },
+            {
+                "model": "hways",
+                "type": "fieldset",
+                "label": "Ci\u0105gi poziome",
+                "children": [
+                    {
+                        "type": "radio",
+                        "label": "Kondygnacja",
+                        "model": "howManyLavels",
+                        "options": {
+                            "1": "Wszystkie pomieszczenia znajduj\u0105 si\u0119 na tym samym poziomie i na jednej kondygnacji, nie dotyczy wej\u015bcia i przestrzeni za wej\u015bciem.",
+                            "2": "Pomieszczenia znajduj\u0105 si\u0119 na jednej kondygnacji, ale na r\u00f3\u017cnych poziomach.",
+                            "3": "Pomieszczenia znajduj\u0105 si\u0119 na [number] kondygnacjach."
+                        },
+                        "binding": {
+                            "number": {
+                                "type": "nubmer",
+                                "label": "Liczba kondygnacji na kt\u00f3rych znajduja si\u0119 pomieszczenia",
+                                "model": "howManyLavelsCount"
+                            }
+                        }
+                    },
+                    {
+                        "type": "radio",
+                        "label": "R\u00f3\u017cnice poziom\u00f3w",
+                        "model": "slopeAngle",
+                        "options": {
+                            "1": "R\u00f3\u017cnice poziom\u00f3w mo\u017cna pokona\u0107 za pomoc\u0105 pochylni o maksymalnym nachyleniu [slopeAngle1]%.",
+                            "2": "R\u00f3\u017cnice poziom\u00f3w mo\u017cna pokona\u0107 za pomoc\u0105 pochylni o maksymalnym nachyleniu [slopeAngle2]% lub platformy przyschodowej",
+                            "3": "Cz\u0119\u015b\u0107 korytarzy nie jest dost\u0119pna dla os\u00f3b poruszaj\u0105cych si\u0119 na w\u00f3zkach",
+                            "4": "Wszystkie korytarze s\u0105 niedost\u0119pne dla os\u00f3b na w\u00f3zkach."
+                        },
+                        "binding": {
+                            "slopeAngle1": {
+                                "type": "nubmer",
+                                "label": "Nachylenie w stopniach",
+                                "model": "slopeAngle1Count"
+                            },
+                            "slopeAngle2": {
+                                "type": "nubmer",
+                                "label": "Nachylenie w stopniach",
+                                "model": "slopeAngle2Count"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "model": "vways",
+                "type": "fieldset",
+                "label": "Ci\u0105gi pionowe",
+                "children": [
+                    {
+                        "type": "bool",
+                        "label": "Na inne kondygnacje mo\u017cesz si\u0119 dosta\u0107 za pomoc\u0105 schod\u00f3w",
+                        "model": "canGoByStairs"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Mo\u017cesz skorzysta\u0107 z windy.",
+                        "model": "canGoByElevator"
+                    },
+                    {
+                        "model": "stairs",
+                        "type": "fieldset",
+                        "label": "Schody",
+                        "children": [
+                            {
+                                "type": "text",
+                                "label": "Nazwa",
+                                "model": "stairsName"
+                            },
+                            {
+                                "type": "bool",
+                                "label": "Ci\u0105g schod\u00f3w sk\u0142ada si\u0119 z [count] stopni.",
+                                "model": "numberOfSteps",
+                                "binding": {
+                                    "count": {
+                                        "type": "nubmer",
+                                        "label": "Liczba stopni",
+                                        "model": "numberOfStepsCount"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "bool",
+                                "label": "Stopie\u0144 ma wysoko\u015b\u0107 [stepHeight] centymetr\u00f3w.",
+                                "model": "stepHeigh",
+                                "binding": {
+                                    "stepHeight": {
+                                        "type": "nubmer",
+                                        "label": "Wysoko\u015b\u0107 stopnia",
+                                        "model": "stepHeighCount"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "bool",
+                                "label": "Przy schodach znajduje si\u0119 por\u0119cz wzd\u0142u\u017c ca\u0142ego ci\u0105gu.",
+                                "model": "hasHandRail"
+                            },
+                            {
+                                "type": "bool",
+                                "label": "Stopnie s\u0105 oznaczone kontrastowo",
+                                "model": "hasHighContrastNosing"
+                            },
+                            {
+                                "type": "bool",
+                                "label": "Przed schodami znajduj\u0105 si\u0119 dotykowe pasy ostrzegawcze.",
+                                "model": "hasTactileSafetyStrips"
+                            }
+                        ]
+                    },
+                    {
+                        "model": "elevator",
+                        "type": "fieldset",
+                        "label": "Winda",
+                        "children": [
+                            {
+                                "type": "radio",
+                                "label": "Drzwi",
+                                "model": "elevatorDor",
+                                "options": {
+                                    "1": "Drzwi windy otwieraj\u0105 si\u0119 automatycznie",
+                                    "2": "Drzwi musisz otworzy\u0107 r\u0119cznie"
+                                }
+                            },
+                            {
+                                "type": "bool",
+                                "label": "Szeroko\u015b\u0107 drzwi wynosi [width] centymetr\u00f3w",
+                                "model": "elevatorDorWidth",
+                                "binding": {
+                                    "width": {
+                                        "type": "nubmer",
+                                        "label": "Szeroko\u015b\u0107 drzwi windy",
+                                        "model": "elevatorDorWidthNumber"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "radio",
+                                "label": "Lokalizacja windy",
+                                "model": "elevatorLocation",
+                                "options": {
+                                    "1": "Winda znajduje si\u0119 w budynku",
+                                    "2": "Winda znajduje si\u0119 poza budynkiem"
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "label": "Wind\u0119 znajdziesz",
+                                "model": "elevatorLocationDesc"
+                            },
+                            {
+                                "type": "bool",
+                                "label": "Kabina windy ma g\u0142\u0119boko\u015b\u0107 [cabinLength] centymetr\u00f3w i szeroko\u015b\u0107 [cabinWidth] centymetr\u00f3w.",
+                                "model": "elevatorRoom",
+                                "binding": {
+                                    "cabinLength": {
+                                        "type": "nubmer",
+                                        "label": "G\u0142\u0119boko\u015b\u0107 kabiny windy",
+                                        "model": "elevatorRoomLengthNumber"
+                                    },
+                                    "cabinWidth": {
+                                        "type": "nubmer",
+                                        "label": "Szeroko\u015b\u0107 kabiny windy",
+                                        "model": "elevatorRoomWidthNumber"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "bool",
+                                "label": "Przyciski steruj\u0105ce maj\u0105 opisy w alfabecie Braille\u2019a.",
+                                "model": "hasBrailleText"
+                            },
+                            {
+                                "type": "bool",
+                                "label": "Przyciski steruj\u0105ce maj\u0105 du\u017ce  oznaczenia.",
+                                "model": "hasLargePrint"
+                            },
+                            {
+                                "type": "bool",
+                                "label": "Oznaczenia s\u0105 kontrastowe.",
+                                "model": "isHighContrast"
+                            },
+                            {
+                                "type": "bool",
+                                "label": "Najni\u017csze przyciski steruj\u0105ce znajduj\u0105 si\u0119 na wysoko\u015bci [number] centymetr\u00f3w.",
+                                "model": "heightOfControls",
+                                "binding": {
+                                    "number": {
+                                        "type": "nubmer",
+                                        "label": "wysoko\u015b\u0107 przycisk\u00f3w steruj\u0105cych",
+                                        "model": "heightOfControlsNumber"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "bool",
+                                "label": "W windzie s\u0105 komunikaty g\u0142osowe.",
+                                "model": "hasSpeech"
+                            },
+                            {
+                                "type": "bool",
+                                "label": "W razie problem\u00f3w - zadzwo\u0144 do obs\u0142ugi na numer telefonu: [number]",
+                                "model": "servicePhone",
+                                "binding": {
+                                    "number": {
+                                        "type": "text",
+                                        "label": "nr telefonu alarmowebo",
+                                        "model": "servicePhoneNumber"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "model": "rooms",
+                "type": "fieldset",
+                "label": "Pomieszczenia",
+                "children": [
+                    {
+                        "type": "radio",
+                        "label": "Dost\u0119pno\u015b\u0107 pomieszcze\u0144",
+                        "model": "roomsAccessability",
+                        "options": {
+                            "1": "Wszystkie pomieszczenia s\u0105 dost\u0119pne dla os\u00f3b na w\u00f3zkach.",
+                            "2": "Oko\u0142o [number]% pomieszcze\u0144 jest dost\u0119pnych dla os\u00f3b na w\u00f3zkach.",
+                            "3": "Pomieszczenia nie s\u0105 dost\u0119pne dla os\u00f3b na w\u00f3zkach."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
