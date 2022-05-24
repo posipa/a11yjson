@@ -1,646 +1,636 @@
-[
-        [
-            'model'=>'arch',
-            'label' => 'Dostępność architektoniczna',
-            'desc' => 'W sekcji "Dostępność architektoniczna" podmiot publiczny deklaruje dostępność architektoniczną swojej siedziby. Podaje przy tym adres lub adresy, jeżeli lokalizacji jest kilka, do każdej tworząc oddzielne opisy.',
-            'children' => [
-                [
-                    'model' => 'placeinfo',
-                    'type' => 'fieldset',
-                    'label' => 'Adres',
-                    'children' => [
-                        [
-                            'type'=>'text',
-                            'label'=>'Województwo',
-                            'model'=>'state',
-                            'desc'=>' ',
-
-                        ],
-                        [
-                            'type'=>'text',
-                            'label'=>'Powiat',
-                            'model'=>'county',
-                            'desc'=>' ',
-                        ],
-                        [
-                            'type'=>'text',
-                            'label'=>'Gmina',
-                            'model'=>'commune',
-                            'desc'=>' ',
-                        ],
-                        [
-                            'type'=>'text',
-                            'label'=>'Miejscowość',
-                            'model'=>'town',
-                            'desc'=>' ',
-                        ],
-                        [
-                            'type'=>'text',
-                            'label'=>'Ulica i nr',
-                            'model'=>'street',
-                            'desc'=>' ',
-                        ],
-
-                        [
-                            'type'=>'text',
-                            'label'=>'kod pocztowy i poczta',
-                            'model'=>'post',
-                            'desc'=>' ',
-                        ],
-                    ],
-                ],
-                [
-                    'model' => 'parking',
-                    'type' => 'fieldset',
-                    'label' => 'Parking',
-                    'children' => [
-                        [
-                            'type'=>'radio',
-                            'label'=>'Miejsca parkingowe dla osób niepełnosprawnych',
-                            'model'=>'forWheelchairUsers',
-                            'options' => [
-                                '1' => 'Możesz skorzystać z miejsca parkingowego. Na parkingu wyznaczyliśmy [number] miejsc przeznaczonych dla osób niepełnosprawnych. Pamiętaj o zabraniu karty parkingowej i umieszczeniu jej za szybą.',
-                                '2' => 'Nie mamy wyznaczonych miejsc parkingowych dla osób niepełnosprawnych.',
-                                '3' => 'Nie mamy parkingu.',
-                            ],
-                            'binding'=>[
-                                'number' => [
-                                    'type'=>'number',
-                                    'label'=>'Liczba miejsc parkingowych przeznaczonych dla osób niepełnosprawnych',
-                                    'model'=>'forWheelchairUsersCount',
-                                ],
-                            ],
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Miejsca parkingowe są pomalowane na niebiesko i prawidłowo oznakowane.',
-                            'model'=>'hasDedicatedSignage',
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Od miejsca parkingowego do wejścia do budynku odległość wynosi około [number] metrów.',
-                            'model'=>'distanceToEntrance',
-                            'binding'=>[
-                                'number' => [
-                                    'type'=>'number',
-                                    'label'=>'Odległość parkingu od wejścia',
-                                    'model'=>'distanceToEntranceCount',
-                                ],
-                            ],
-                        ],
-                        [
-                            'type'=>'radio',
-                            'label'=>'Odpłatność za parking',
-                            'model'=>'paymentBySpace',
-                            'options' => [
-                                '1' => 'Parking jest bezpłatny.',
-                                '2' => 'Parking jest bezpłatny dla osób posiadających kartę parkingową.',
-                                '3' => 'Parking jest płatny.',
-                            ]
-                        ],
-                        [
-                            'type'=>'textarea',
-                            'label'=>'Opis usytuowania parkingu',
-                            'desc'=>'np.: Miejsca parkingowe znajdują się na dziedzińcu. Można na niego wjechać przez bramę. Szlaban otwiera strażnik, po okazaniu przepustki.',
-                            'model'=>'parkingLocation',
-                        ],
-                    ],
-                ],
-                [
-                    'model' => 'dog',
-                    'type' => 'fieldset',
-                    'label' => 'Pies asystujący',
-                    'children' => [
-                        [
-                            'type'=>'bool',
-                            'label'=>'Możesz przyjść z psem asystującym lub psem przewodnikiem. Pamiętaj o certyfikacie psa asystującego i zaświadczeniu o szczepieniu.',
-                            'model'=>'allowsGuideDogs',
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Pies musi mieć kaganiec. Nie dotyczy psów przewodników.',
-                            'model'=>'dogsNeedMuzzle',
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Zapewniamy wodę dla zwierzaka.',
-                            'model'=>'suppliesWaterForPets',
-                        ],
-                    ],
-                ],
-                [
-                    'model' => 'entrance',
-                    'type' => 'fieldset',
-                    'label' => 'Wejście do budynku',
-                    'children' => [
-                        [
-                            'type'=>'bool',
-                            'label'=>'Wejście jest na poziomie gruntu. Nie ma przeszkód, by wjechać na wózku.',
-                            'model'=>'entranceOnGroundLevel',
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Do wejścia prowadzą schody.',
-                            'model'=>'stairsLeadToEntrance',
-                        ],
-                            [
-                                'type'=>'bool',
-                                'label'=>'Przed schodami znajduje się pas ostrzegawczy wykonany z wypukłych elementów.',
-                                'model'=>'bumbBeforeStairs',
-                                'logic'=>[
-                                    'stairsLeadToEntrance'=> ':ischecked'
-                                ],
-                            ],
-                            [
-                                'type'=>'bool',
-                                'label'=>'Stopnie są oznaczone kontrastowo.',
-                                'model'=>'stairsAreContrasted',
-                                'logic'=>[
-                                    'stairsLeadToEntrance'=> ':ischecked'
-                                ],
-                            ],
-                            [
-                                'type'=>'bool',
-                                'label'=>'Przy schodach znajduje się poręcz.',
-                                'model'=>'handLeadAlongStairs',
-                                'logic'=>[
-                                    'stairsLeadToEntrance'=> ':ischecked'
-                                ],
-                            ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Do wejścia doprowadzona jest stała pochylnia o nachyleniu [number]%.',
-                            'model'=>'pochylniaONachyleniu',
-                            'binding'=>[
-                                'number' => [
-                                    'type'=>'number',
-                                    'label'=>'Wartość nachylenia',
-                                    'model'=>'stairsLeadToEntrance1212',
-                                ],
-                            ],
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Istnieje możliwość rozłożenia przenośnej rampy. Zawiadom nas o tym wcześniej.',
-                            'model'=>'mozliwoscPrzenosnejRampy',
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Różnicę wysokości możesz pokonać za pomocą platformy przyschodowej.',
-                            'model'=>'jestPlatformaPrzyschodowa',
-                        ],
-                        [
-                            'type'=>'textarea',
-                            'label'=>'Dodatkowe informacje',
-                            'model'=>'extraData',
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Przestrzeń manewrowa przed wejściem wynosi [number] centymetrów.',
-                            'model'=>'przestrzenManewrowaPrzedWejsciem',
-                            'binding'=>[
-                                'number' => [
-                                    'type'=>'number',
-                                    'label'=>'Wielkość przestrzeni manewrowej',
-                                    'model'=>'wielkoscPrzestrzeniManewrowej',
-                                ],
-                            ],
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Drzwi są obrotowe.',
-                            'model'=>'whereDoor',
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Drzwi otwierają się automatycznie.',
-                            'model'=>'autoDoor',
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Drzwi są zawsze otwarte.',
-                            'model'=>'alwaysOpened',
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Drzwi musisz otworzyć ręcznie.',
-                            'model'=>'mustHandOpen',
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Otwierają się na zewnątrz.',
-                            'model'=>'openToOutside',
-                        ],
-                        [
-                            'type'=>'radio',
-                            'label'=>'Siła potrzebna do otwarcia drzwi',
-                            'model'=>'openToOutside',
-                            'options' => [
-                                '1' => 'Otworzenie drzwi nie wymaga dużej siły.',
-                                '2' => 'Otworzenie drzwi wymaga dużej siły.',
-                            ]
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Drzwi mają wygodną i ergonomiczną klamkę.',
-                            'model'=>'handyHandle',
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Można je łatwo utrzymać w pozycji otwartej.',
-                            'model'=>'easyToHold',
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Szerokość otworu wejściowego wynosi [number] centymetrów.',
-                            'model'=>'widthOfOpenDoors',
-                            'binding'=>[
-                                'number' => [
-                                    'type'=>'number',
-                                    'label'=>'Szerokość w cm',
-                                    'model'=>'widthOfOpenDoorsNumber',
-                                ],
-                            ],
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Drzwi są przeźroczyste i [boolen] kontrastowo oznaczone.',
-                            'model'=>'transparentDoors',
-                            'binding'=>[
-                                'boolen' => [
-                                    'type'=>'select',
-                                    'label'=>'Czy drzwi są kontrastowo oznaczone',
-                                    'model'=>'areDoorsOznakowane',
-                                    'options' => [
-                                        'są' => 'są',
-                                        'nie są' => 'nie są',
-                                    ]
-                                ],
-                            ],
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Skorzystaj z dzwonka przy drzwiach.',
-                            'model'=>'useDoorBell',
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Skorzystaj z domofonu przy drzwiach.',
-                            'model'=>'useDomofon',
-                        ],
-                        [
-                            'type'=>'textarea',
-                            'label'=>'Jeżeli nie możesz skorzystać z głównego wejścia',
-                            'model'=>'ifCantUseEntrance',
-                        ],
-                    ],
-                ],
-                [
-                    'model' => 'lobby',
-                    'type' => 'fieldset',
-                    'label' => 'Przestrzeń za wejściem',
-                    'children' => [
-                        [
-                            'type'=>'textarea',
-                            'label'=>'Opis przestrzeni',
-                            'model'=>'lobbyDesc',
-                        ],
-
-                        [
-                            'type'=>'bool',
-                            'label'=>'Plan dotykowy rozmieszczenia pomieszczeń znajduje się [text]',
-                            'model'=>'isTactilePlan',
-                            'binding'=>[
-                                'text' => [
-                                    'type'=>'text',
-                                    'label'=>'opis lokalizacji palnu dotykowego',
-                                    'model'=>'isTactilePlanDesc',
-                                ],
-                            ],
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Plan rozmieszczenia pomieszczeń znajduje się w [text] i jest wykonany w kontrastowych kolorach oraz dużymi czcionkami.',
-                            'model'=>'isLargePrintPlan',
-                            'binding'=>[
-                                'text' => [
-                                    'type'=>'text',
-                                    'label'=>'opis lokalizacji palnu rozmieszczeń',
-                                    'model'=>'isLargePrintPlanDesc',
-                                ],
-                            ],
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'W pomieszczeniu zamontowany jest system dźwiękowy [text]',
-                            'model'=>'isAudioInformationSystem',
-                            'binding'=>[
-                                'text' => [
-                                    'type'=>'text',
-                                    'label'=>'Rodzaj systemu dźwiękowego',
-                                    'model'=>'isAudioInformationSystemDesc',
-                                ],
-                            ],
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Ścieżka dotykowa prowadzi do [text]',
-                            'model'=>'hasTactileGuideStrips',
-                            'binding'=>[
-                                'text' => [
-                                    'type'=>'text',
-                                    'label'=>'Gdzie kieruje ścieżka dotykowa',
-                                    'model'=>'hasTactileGuideStripsDesc',
-                                ],
-                            ],
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Przestrzeń jest zazwyczaj cicha i spokojna.',
-                            'model'=>'isQuiet',
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Pomieszczenie jest dobrze oświetlone.',
-                            'model'=>'isWellLit',
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Punkt obsługi znajduje się [text]',
-                            'model'=>'customerServiceLocation',
-                            'binding'=>[
-                                'text' => [
-                                    'type'=>'text',
-                                    'label'=>'Gdzie znajduje się punkt obsługi.',
-                                    'model'=>'customerServiceLocationDesc',
-                                ],
-                            ],
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Punkt obsługi wyposażony jest w pętlę indukcyjną. ',
-                            'model'=>'hasInductionLoop',
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'W punkcie obsługi dostępna jest usługa tłumaczenia na język migowy.',
-                            'model'=>'hasSignLanguageInterpretation',
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Blat jest obniżony i może do niego podjechać osoba na wózku.',
-                            'model'=>'isDeskProperHeight',
-                        ],
-                    ],
-                ],
-                [
-                    'model' => 'hways',
-                    'type' => 'fieldset',
-                    'label' => 'Ciągi poziome',
-                    'children' => [
-                        [
-                            'type'=>'radio',
-                            'label'=>'Kondygnacja',
-                            'model'=>'howManyLavels',
-                            'options' => [
-                                '1' => 'Wszystkie pomieszczenia znajdują się na tym samym poziomie i na jednej kondygnacji, nie dotyczy wejścia i przestrzeni za wejściem.',
-                                '2' => 'Pomieszczenia znajdują się na jednej kondygnacji, ale na różnych poziomach.',
-                                '3' => 'Pomieszczenia znajdują się na [number] kondygnacjach.',
-                                '4' => 'Wszystkie pomieszczenia znajdują się na parterze.',
-                            ],
-                            'binding'=>[
-                                'number' => [
-                                    'type'=>'number',
-                                    'label'=>'Liczba kondygnacji na których znajduja się pomieszczenia',
-                                    'model'=>'howManyLavelsCount',
-                                ],
-                            ],
-                        ],
-                        [
-                            'type'=>'radio',
-                            'label'=>'Różnice poziomów',
-                            'model'=>'slopeAngle',
-                            'options' => [
-                                '1' => 'Różnice poziomów można pokonać za pomocą pochylni o maksymalnym nachyleniu [slopeAngle1]%.',
-                                '2' => 'Wszystkie korytarze są dostępne.',
-                                '3' => 'Część korytarzy nie jest dostępna dla osób poruszających się na wózkach.',
-                                '4' => 'Wszystkie korytarze są niedostępne dla osób na wózkach.',
-                            ],
-                            'binding'=>[
-                                'slopeAngle1' => [
-                                    'type'=>'number',
-                                    'label'=>'Nachylenie w stopniach',
-                                    'model'=>'slopeAngle1Count',
-                                ],
-                                'slopeAngle2' => [
-                                    'type'=>'number',
-                                    'label'=>'Nachylenie w stopniach',
-                                    'model'=>'slopeAngle2Count',
-                                ],
-                            ],
-                        ],
-
-
-                    ],
-                ],
-                [
-                    'model' => 'vways',
-                    'type' => 'fieldset',
-                    'label' => 'Ciągi pionowe',
-                    'children' => [
-                        [
-                            'type'=>'bool',
-                            'label'=>'Na inne kondygnacje możesz się dostać za pomocą schodów',
-                            'model'=>'canGoByStairs',
-                        ],
-                        [
-                            'type'=>'bool',
-                            'label'=>'Możesz skorzystać z windy.',
-                            'model'=>'canGoByElevator',
-                        ],
-                        [
-                            'model' => 'stairs',
-                            'type' => 'fieldset',
-                            'label' => 'Schody',
-                            'children' => [
-                                [
-                                    'type'=>'text',
-                                    'label'=>'Nazwa',
-                                    'model'=>'stairsName',
-                                ],
-                                [
-                                    'type'=>'bool',
-                                    'label'=>'Ciąg schodów składa się z [count] stopni.',
-                                    'model'=>'numberOfSteps',
-                                    'binding'=>[
-                                        'count' => [
-                                            'type'=>'number',
-                                            'label'=>'Liczba stopni',
-                                            'model'=>'numberOfStepsCount',
-                                        ],
-                                    ],
-                                ],
-                                [
-                                    'type'=>'bool',
-                                    'label'=>'Stopień ma wysokość [stepHeight] centymetrów.',
-                                    'model'=>'stepHeigh',
-                                    'binding'=>[
-                                        'stepHeight' => [
-                                            'type'=>'number',
-                                            'label'=>'Wysokość stopnia',
-                                            'model'=>'stepHeighCount',
-                                        ],
-                                    ],
-                                ],
-                                [
-                                    'type'=>'bool',
-                                    'label'=>'Przy schodach znajduje się poręcz wzdłuż całego ciągu.',
-                                    'model'=>'hasHandRail',
-                                ],
-                                [
-                                    'type'=>'bool',
-                                    'label'=>'Stopnie są oznaczone kontrastowo',
-                                    'model'=>'hasHighContrastNosing',
-                                ],
-                                [
-                                    'type'=>'bool',
-                                    'label'=>'Przed schodami znajdują się dotykowe pasy ostrzegawcze.',
-                                    'model'=>'hasTactileSafetyStrips',
-                                ],
-                            ],
-                        ],
-                        [
-                            'model' => 'elevator',
-                            'type' => 'fieldset',
-                            'label' => 'Winda',
-                            'children' => [
-                                [
-                                    'type'=>'radio',
-                                    'label'=>'Drzwi',
-                                    'model'=>'elevatorDor',
-                                    'options' => [
-                                        '1' => 'Drzwi windy otwierają się automatycznie',
-                                        '2' => 'Drzwi musisz otworzyć ręcznie',
-                                    ]
-                                ],
-                                [
-                                    'type'=>'bool',
-                                    'label'=>'Szerokość drzwi wynosi [width] centymetrów',
-                                    'model'=>'elevatorDorWidth',
-                                    'binding'=>[
-                                        'width' => [
-                                            'type'=>'number',
-                                            'label'=>'Szerokość drzwi windy',
-                                            'model'=>'elevatorDorWidthNumber',
-                                        ],
-                                    ],
-                                ],
-                                [
-                                    'type'=>'radio',
-                                    'label'=>'Lokalizacja windy',
-                                    'model'=>'elevatorLocation',
-                                    'options' => [
-                                        '1' => 'Winda znajduje się w budynku',
-                                        '2' => 'Winda znajduje się poza budynkiem',
-                                    ]
-                                ],
-                                [
-                                    'type'=>'text',
-                                    'label'=>'Windę znajdziesz',
-                                    'model'=>'elevatorLocationDesc',
-                                ],
-
-                                [
-                                    'type'=>'bool',
-                                    'label'=>'Kabina windy ma głębokość [cabinLength] centymetrów i szerokość [cabinWidth] centymetrów.',
-                                    'model'=>'elevatorRoom',
-                                    'binding'=>[
-                                        'cabinLength' => [
-                                            'type'=>'number',
-                                            'label'=>'Głębokość kabiny windy',
-                                            'model'=>'elevatorRoomLengthNumber',
-                                        ],
-                                        'cabinWidth' => [
-                                            'type'=>'number',
-                                            'label'=>'Szerokość kabiny windy',
-                                            'model'=>'elevatorRoomWidthNumber',
-                                        ],
-                                    ],
-                                ],
-                                [
-                                    'type'=>'bool',
-                                    'label'=>'Przyciski sterujące mają opisy w alfabecie Braille’a.',
-                                    'model'=>'hasBrailleText',
-                                ],
-                                [
-                                    'type'=>'bool',
-                                    'label'=>'Przyciski sterujące mają duże  oznaczenia.',
-                                    'model'=>'hasLargePrint',
-                                ],
-                                [
-                                    'type'=>'bool',
-                                    'label'=>'Oznaczenia są kontrastowe.',
-                                    'model'=>'isHighContrast',
-                                ],
-                                [
-                                    'type'=>'bool',
-                                    'label'=>'Najniższe przyciski sterujące znajdują się na wysokości [number] centymetrów.',
-                                    'model'=>'heightOfControls',
-                                    'binding'=>[
-                                        'number' => [
-                                            'type'=>'number',
-                                            'label'=>'wysokość przycisków sterujących',
-                                            'model'=>'heightOfControlsNumber',
-                                        ]
-                                    ],
-                                ],
-                                [
-                                    'type'=>'bool',
-                                    'label'=>'W windzie są komunikaty głosowe.',
-                                    'model'=>'hasSpeech'
-                                ],
-                                [
-                                    'type'=>'bool',
-                                    'label'=>'W razie problemów - zadzwoń do obsługi na numer telefonu: [number]',
-                                    'model'=>'servicePhone',
-                                    'binding'=>[
-                                        'number' => [
-                                            'type'=>'text',
-                                            'label'=>'nr telefonu alarmowebo',
-                                            'model'=>'servicePhoneNumber',
-                                        ]
-                                    ],
-                                ],
-                            ],
+{
+        "model": "arch",
+        "label": "Dostępność architektoniczna",
+        "desc": "W sekcji \"Dostępność architektoniczna\" podmiot publiczny deklaruje dostępność architektoniczną swojej siedziby. Podaje przy tym adres lub adresy, jeżeli lokalizacji jest kilka, do każdej tworząc oddzielne opisy.",
+        "children": [
+            {
+                "model": "placeinfo",
+                "type": "fieldset",
+                "label": "Adres",
+                "children": [
+                    {
+                        "type": "text",
+                        "label": "Województwo",
+                        "model": "state",
+                        "desc": " "
+                    },
+                    {
+                        "type": "text",
+                        "label": "Powiat",
+                        "model": "county",
+                        "desc": " "
+                    },
+                    {
+                        "type": "text",
+                        "label": "Gmina",
+                        "model": "commune",
+                        "desc": " "
+                    },
+                    {
+                        "type": "text",
+                        "label": "Miejscowość",
+                        "model": "town",
+                        "desc": " "
+                    },
+                    {
+                        "type": "text",
+                        "label": "Ulica i nr",
+                        "model": "street",
+                        "desc": " "
+                    },
+                    {
+                        "type": "text",
+                        "label": "kod pocztowy i poczta",
+                        "model": "post",
+                        "desc": " "
+                    }
+                ]
+            },
+            {
+                "model": "parking",
+                "type": "fieldset",
+                "label": "Parking",
+                "children": [
+                    {
+                        "type": "radio",
+                        "label": "Miejsca parkingowe dla osób niepełnosprawnych",
+                        "model": "forWheelchairUsers",
+                        "options": {
+                            "1": "Możesz skorzystać z miejsca parkingowego. Na parkingu wyznaczyliśmy [number] miejsc przeznaczonych dla osób niepełnosprawnych. Pamiętaj o zabraniu karty parkingowej i umieszczeniu jej za szybą.",
+                            "2": "Nie mamy wyznaczonych miejsc parkingowych dla osób niepełnosprawnych.",
+                            "3": "Nie mamy parkingu."
+                        },
+                        "binding": {
+                            "number": {
+                                "type": "number",
+                                "label": "Liczba miejsc parkingowych przeznaczonych dla osób niepełnosprawnych",
+                                "model": "forWheelchairUsersCount"
+                            }
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Miejsca parkingowe są pomalowane na niebiesko i prawidłowo oznakowane.",
+                        "model": "hasDedicatedSignage"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Od miejsca parkingowego do wejścia do budynku odległość wynosi około [number] metrów.",
+                        "model": "distanceToEntrance",
+                        "binding": {
+                            "number": {
+                                "type": "number",
+                                "label": "Odległość parkingu od wejścia",
+                                "model": "distanceToEntranceCount"
+                            }
+                        }
+                    },
+                    {
+                        "type": "radio",
+                        "label": "Odpłatność za parking",
+                        "model": "paymentBySpace",
+                        "options": {
+                            "1": "Parking jest bezpłatny.",
+                            "2": "Parking jest bezpłatny dla osób posiadających kartę parkingową.",
+                            "3": "Parking jest płatny."
+                        }
+                    },
+                    {
+                        "type": "textarea",
+                        "label": "Opis usytuowania parkingu",
+                        "desc": "np.: Miejsca parkingowe znajdują się na dziedzińcu. Można na niego wjechać przez bramę. Szlaban otwiera strażnik, po okazaniu przepustki.",
+                        "model": "parkingLocation"
+                    }
+                ]
+            },
+            {
+                "model": "dog",
+                "type": "fieldset",
+                "label": "Pies asystujący",
+                "children": [
+                    {
+                        "type": "bool",
+                        "label": "Możesz przyjść z psem asystującym lub psem przewodnikiem. Pamiętaj o certyfikacie psa asystującego i zaświadczeniu o szczepieniu.",
+                        "model": "allowsGuideDogs"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Pies musi mieć kaganiec. Nie dotyczy psów przewodników.",
+                        "model": "dogsNeedMuzzle"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Zapewniamy wodę dla zwierzaka.",
+                        "model": "suppliesWaterForPets"
+                    }
+                ]
+            },
+            {
+                "model": "entrance",
+                "type": "fieldset",
+                "label": "Wejście do budynku",
+                "children": [
+                    {
+                        "type": "bool",
+                        "label": "Wejście jest na poziomie gruntu. Nie ma przeszkód, by wjechać na wózku.",
+                        "model": "entranceOnGroundLevel"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Do wejścia prowadzą schody.",
+                        "model": "stairsLeadToEntrance"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Przed schodami znajduje się pas ostrzegawczy wykonany z wypukłych elementów.",
+                        "model": "bumbBeforeStairs",
+                        "logic": {
+                            "stairsLeadToEntrance": ":ischecked"
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Stopnie są oznaczone kontrastowo.",
+                        "model": "stairsAreContrasted",
+                        "logic": {
+                            "stairsLeadToEntrance": ":ischecked"
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Przy schodach znajduje się poręcz.",
+                        "model": "handLeadAlongStairs",
+                        "logic": {
+                            "stairsLeadToEntrance": ":ischecked"
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Do wejścia doprowadzona jest stała pochylnia o nachyleniu [number]%.",
+                        "model": "pochylniaONachyleniu",
+                        "binding": {
+                            "number": {
+                                "type": "number",
+                                "label": "Wartość nachylenia",
+                                "model": "stairsLeadToEntrance1212"
+                            }
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Istnieje możliwość rozłożenia przenośnej rampy. Zawiadom nas o tym wcześniej.",
+                        "model": "mozliwoscPrzenosnejRampy"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Różnicę wysokości możesz pokonać za pomocą platformy przyschodowej.",
+                        "model": "jestPlatformaPrzyschodowa"
+                    },
+                    {
+                        "type": "textarea",
+                        "label": "Dodatkowe informacje",
+                        "model": "extraData"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Przestrzeń manewrowa przed wejściem wynosi [number] centymetrów.",
+                        "model": "przestrzenManewrowaPrzedWejsciem",
+                        "binding": {
+                            "number": {
+                                "type": "number",
+                                "label": "Wielkość przestrzeni manewrowej",
+                                "model": "wielkoscPrzestrzeniManewrowej"
+                            }
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Drzwi są obrotowe.",
+                        "model": "whereDoor"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Drzwi otwierają się automatycznie.",
+                        "model": "autoDoor"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Drzwi są zawsze otwarte.",
+                        "model": "alwaysOpened"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Drzwi musisz otworzyć ręcznie.",
+                        "model": "mustHandOpen"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Otwierają się na zewnątrz.",
+                        "model": "openToOutside"
+                    },
+                    {
+                        "type": "radio",
+                        "label": "Siła potrzebna do otwarcia drzwi",
+                        "model": "openToOutside",
+                        "options": {
+                            "1": "Otworzenie drzwi nie wymaga dużej siły.",
+                            "2": "Otworzenie drzwi wymaga dużej siły."
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Drzwi mają wygodną i ergonomiczną klamkę.",
+                        "model": "handyHandle"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Można je łatwo utrzymać w pozycji otwartej.",
+                        "model": "easyToHold"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Szerokość otworu wejściowego wynosi [number] centymetrów.",
+                        "model": "widthOfOpenDoors",
+                        "binding": {
+                            "number": {
+                                "type": "number",
+                                "label": "Szerokość w cm",
+                                "model": "widthOfOpenDoorsNumber"
+                            }
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Drzwi są przeźroczyste i [boolen] kontrastowo oznaczone.",
+                        "model": "transparentDoors",
+                        "binding": {
+                            "boolen": {
+                                "type": "select",
+                                "label": "Czy drzwi są kontrastowo oznaczone",
+                                "model": "areDoorsOznakowane",
+                                "options": {
+                                    "są": "są",
+                                    "nie są": "nie są"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Skorzystaj z dzwonka przy drzwiach.",
+                        "model": "useDoorBell"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Skorzystaj z domofonu przy drzwiach.",
+                        "model": "useDomofon"
+                    },
+                    {
+                        "type": "textarea",
+                        "label": "Jeżeli nie możesz skorzystać z głównego wejścia",
+                        "model": "ifCantUseEntrance"
+                    }
+                ]
+            },
+            {
+                "model": "lobby",
+                "type": "fieldset",
+                "label": "Przestrzeń za wejściem",
+                "children": [
+                    {
+                        "type": "textarea",
+                        "label": "Opis przestrzeni",
+                        "model": "lobbyDesc"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Plan dotykowy rozmieszczenia pomieszczeń znajduje się [text]",
+                        "model": "isTactilePlan",
+                        "binding": {
+                            "text": {
+                                "type": "text",
+                                "label": "opis lokalizacji palnu dotykowego",
+                                "model": "isTactilePlanDesc"
+                            }
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Plan rozmieszczenia pomieszczeń znajduje się w [text] i jest wykonany w kontrastowych kolorach oraz dużymi czcionkami.",
+                        "model": "isLargePrintPlan",
+                        "binding": {
+                            "text": {
+                                "type": "text",
+                                "label": "opis lokalizacji palnu rozmieszczeń",
+                                "model": "isLargePrintPlanDesc"
+                            }
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "W pomieszczeniu zamontowany jest system dźwiękowy [text]",
+                        "model": "isAudioInformationSystem",
+                        "binding": {
+                            "text": {
+                                "type": "text",
+                                "label": "Rodzaj systemu dźwiękowego",
+                                "model": "isAudioInformationSystemDesc"
+                            }
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Ścieżka dotykowa prowadzi do [text]",
+                        "model": "hasTactileGuideStrips",
+                        "binding": {
+                            "text": {
+                                "type": "text",
+                                "label": "Gdzie kieruje ścieżka dotykowa",
+                                "model": "hasTactileGuideStripsDesc"
+                            }
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Przestrzeń jest zazwyczaj cicha i spokojna.",
+                        "model": "isQuiet"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Pomieszczenie jest dobrze oświetlone.",
+                        "model": "isWellLit"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Punkt obsługi znajduje się [text]",
+                        "model": "customerServiceLocation",
+                        "binding": {
+                            "text": {
+                                "type": "text",
+                                "label": "Gdzie znajduje się punkt obsługi.",
+                                "model": "customerServiceLocationDesc"
+                            }
+                        }
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Punkt obsługi wyposażony jest w pętlę indukcyjną. ",
+                        "model": "hasInductionLoop"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "W punkcie obsługi dostępna jest usługa tłumaczenia na język migowy.",
+                        "model": "hasSignLanguageInterpretation"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Blat jest obniżony i może do niego podjechać osoba na wózku.",
+                        "model": "isDeskProperHeight"
+                    }
+                ]
+            },
+            {
+                "model": "hways",
+                "type": "fieldset",
+                "label": "Ciągi poziome",
+                "children": [
+                    {
+                        "type": "radio",
+                        "label": "Kondygnacja",
+                        "model": "howManyLavels",
+                        "options": {
+                            "1": "Wszystkie pomieszczenia znajdują się na tym samym poziomie i na jednej kondygnacji, nie dotyczy wejścia i przestrzeni za wejściem.",
+                            "2": "Pomieszczenia znajdują się na jednej kondygnacji, ale na różnych poziomach.",
+                            "3": "Pomieszczenia znajdują się na [number] kondygnacjach.",
+                            "4": "Wszystkie pomieszczenia znajdują się na parterze."
+                        },
+                        "binding": {
+                            "number": {
+                                "type": "number",
+                                "label": "Liczba kondygnacji na których znajduja się pomieszczenia",
+                                "model": "howManyLavelsCount"
+                            }
+                        }
+                    },
+                    {
+                        "type": "radio",
+                        "label": "Różnice poziomów",
+                        "model": "slopeAngle",
+                        "options": {
+                            "1": "Różnice poziomów można pokonać za pomocą pochylni o maksymalnym nachyleniu [slopeAngle1]%.",
+                            "2": "Wszystkie korytarze są dostępne.",
+                            "3": "Część korytarzy nie jest dostępna dla osób poruszających się na wózkach.",
+                            "4": "Wszystkie korytarze są niedostępne dla osób na wózkach."
+                        },
+                        "binding": {
+                            "slopeAngle1": {
+                                "type": "number",
+                                "label": "Nachylenie w stopniach",
+                                "model": "slopeAngle1Count"
+                            },
+                            "slopeAngle2": {
+                                "type": "number",
+                                "label": "Nachylenie w stopniach",
+                                "model": "slopeAngle2Count"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "model": "vways",
+                "type": "fieldset",
+                "label": "Ciągi pionowe",
+                "children": [
+                    {
+                        "type": "bool",
+                        "label": "Na inne kondygnacje możesz się dostać za pomocą schodów",
+                        "model": "canGoByStairs"
+                    },
+                    {
+                        "type": "bool",
+                        "label": "Możesz skorzystać z windy.",
+                        "model": "canGoByElevator"
+                    },
+                    {
+                        "model": "stairs",
+                        "type": "fieldset",
+                        "label": "Schody",
+                        "children": [
+                            {
+                                "type": "text",
+                                "label": "Nazwa",
+                                "model": "stairsName"
+                            },
+                            {
+                                "type": "bool",
+                                "label": "Ciąg schodów składa się z [count] stopni.",
+                                "model": "numberOfSteps",
+                                "binding": {
+                                    "count": {
+                                        "type": "number",
+                                        "label": "Liczba stopni",
+                                        "model": "numberOfStepsCount"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "bool",
+                                "label": "Stopień ma wysokość [stepHeight] centymetrów.",
+                                "model": "stepHeigh",
+                                "binding": {
+                                    "stepHeight": {
+                                        "type": "number",
+                                        "label": "Wysokość stopnia",
+                                        "model": "stepHeighCount"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "bool",
+                                "label": "Przy schodach znajduje się poręcz wzdłuż całego ciągu.",
+                                "model": "hasHandRail"
+                            },
+                            {
+                                "type": "bool",
+                                "label": "Stopnie są oznaczone kontrastowo",
+                                "model": "hasHighContrastNosing"
+                            },
+                            {
+                                "type": "bool",
+                                "label": "Przed schodami znajdują się dotykowe pasy ostrzegawcze.",
+                                "model": "hasTactileSafetyStrips"
+                            }
                         ]
-
-
-                    ],
-                ],
-                [
-                    'model' => 'rooms',
-                    'type' => 'fieldset',
-                    'label' => 'Pomieszczenia',
-                    'children' => [
-                        [
-                            'type'=>'radio',
-                            'label'=>'Dostępność pomieszczeń',
-                            'model'=>'roomsAccessability',
-                            'options' => [
-                                '1' => 'Wszystkie pomieszczenia są dostępne dla osób na wózkach.',
-                                '2' => 'Około [number]% pomieszczeń jest dostępnych dla osób na wózkach.',
-                                '3' => 'Pomieszczenia nie są dostępne dla osób na wózkach.',
-                            ],
-                            'binding'=>[
-                                'number' => [
-                                    'type'=>'number',
-                                    'label'=>'Liczba dostępnych pomieszczeń',
-                                    'model'=>'roomsAccessabilityNumber',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-    ]
+                    },
+                    {
+                        "model": "elevator",
+                        "type": "fieldset",
+                        "label": "Winda",
+                        "children": [
+                            {
+                                "type": "radio",
+                                "label": "Drzwi",
+                                "model": "elevatorDor",
+                                "options": {
+                                    "1": "Drzwi windy otwierają się automatycznie",
+                                    "2": "Drzwi musisz otworzyć ręcznie"
+                                }
+                            },
+                            {
+                                "type": "bool",
+                                "label": "Szerokość drzwi wynosi [width] centymetrów",
+                                "model": "elevatorDorWidth",
+                                "binding": {
+                                    "width": {
+                                        "type": "number",
+                                        "label": "Szerokość drzwi windy",
+                                        "model": "elevatorDorWidthNumber"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "radio",
+                                "label": "Lokalizacja windy",
+                                "model": "elevatorLocation",
+                                "options": {
+                                    "1": "Winda znajduje się w budynku",
+                                    "2": "Winda znajduje się poza budynkiem"
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "label": "Windę znajdziesz",
+                                "model": "elevatorLocationDesc"
+                            },
+                            {
+                                "type": "bool",
+                                "label": "Kabina windy ma głębokość [cabinLength] centymetrów i szerokość [cabinWidth] centymetrów.",
+                                "model": "elevatorRoom",
+                                "binding": {
+                                    "cabinLength": {
+                                        "type": "number",
+                                        "label": "Głębokość kabiny windy",
+                                        "model": "elevatorRoomLengthNumber"
+                                    },
+                                    "cabinWidth": {
+                                        "type": "number",
+                                        "label": "Szerokość kabiny windy",
+                                        "model": "elevatorRoomWidthNumber"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "bool",
+                                "label": "Przyciski sterujące mają opisy w alfabecie Braille’a.",
+                                "model": "hasBrailleText"
+                            },
+                            {
+                                "type": "bool",
+                                "label": "Przyciski sterujące mają duże  oznaczenia.",
+                                "model": "hasLargePrint"
+                            },
+                            {
+                                "type": "bool",
+                                "label": "Oznaczenia są kontrastowe.",
+                                "model": "isHighContrast"
+                            },
+                            {
+                                "type": "bool",
+                                "label": "Najniższe przyciski sterujące znajdują się na wysokości [number] centymetrów.",
+                                "model": "heightOfControls",
+                                "binding": {
+                                    "number": {
+                                        "type": "number",
+                                        "label": "wysokość przycisków sterujących",
+                                        "model": "heightOfControlsNumber"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "bool",
+                                "label": "W windzie są komunikaty głosowe.",
+                                "model": "hasSpeech"
+                            },
+                            {
+                                "type": "bool",
+                                "label": "W razie problemów - zadzwoń do obsługi na numer telefonu: [number]",
+                                "model": "servicePhone",
+                                "binding": {
+                                    "number": {
+                                        "type": "text",
+                                        "label": "nr telefonu alarmowebo",
+                                        "model": "servicePhoneNumber"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "model": "rooms",
+                "type": "fieldset",
+                "label": "Pomieszczenia",
+                "children": [
+                    {
+                        "type": "radio",
+                        "label": "Dostępność pomieszczeń",
+                        "model": "roomsAccessability",
+                        "options": {
+                            "1": "Wszystkie pomieszczenia są dostępne dla osób na wózkach.",
+                            "2": "Około [number]% pomieszczeń jest dostępnych dla osób na wózkach.",
+                            "3": "Pomieszczenia nie są dostępne dla osób na wózkach."
+                        },
+                        "binding": {
+                            "number": {
+                                "type": "number",
+                                "label": "Liczba dostępnych pomieszczeń",
+                                "model": "roomsAccessabilityNumber"
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
