@@ -8,11 +8,40 @@
       "2": "Nie mamy wyznaczonych miejsc parkingowych dla osób niepełnosprawnych.",
       "3": "Nie mamy parkingu."
     },
+    "raport": [
+      {
+        "op":"eq",
+        "cond":2,
+        "info":"Musisz wyznaczyć miejsce parkingowe dla osób niepełnosprawnych"
+      }
+    ],
     "binding": {
       "number": {
         "type": "number",
         "label": "Liczba miejsc parkingowych przeznaczonych dla osób niepełnosprawnych",
-        "model": "forWheelchairUsersCount"
+        "model": "forWheelchairUsersCount",
+        "raport": [
+          {
+            "op":"eq",
+            "cond":1,
+            "info":"Jedno miejsce postojowe jest możliwe przy całkowitej liczbie wszystkich stanowisk 6-15"
+          },
+          {
+            "op":"eq",
+            "cond":2,
+            "info":"Dwa miejsca postojowe są możliwe przy całkowitej liczbie wszystkich stanowisk 16-40"
+          },
+          {
+            "op":"eq",
+            "cond":3,
+            "info":"Trzy miejsca postojowe są możliwe przy całkowitej liczbie wszystkich stanowisk 41-100"
+          },
+          {
+            "op":"gt",
+            "cond":3,
+            "info":"Wartość powyżej trzech miejsc postojowych musi spełniać wymogi 4% całkowitej liczby wszystkich stanowisk"
+          }
+        ]
       }
     }
   },
