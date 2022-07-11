@@ -13,5 +13,5 @@ Każdy obiekt składa się z:
     * gteq - większy lub równy
     * lteq - mniejszy lub równy
 * **cond** - warunek
-  * przykład `{"op":"eq", "cond":2}` oznacza więszę od wartości 2
+  * przykład `{"op":"eq", "cond":2}` oznacza że warunek będzi spełniony jeśli wartość będzie równa 2
 * **info** - informacja tekstowa jeśli warunek jest spełniony
