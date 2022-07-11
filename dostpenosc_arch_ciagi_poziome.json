@@ -1,0 +1,43 @@
+[
+  {
+    "type": "radio",
+    "label": "Kondygnacja",
+    "model": "howManyLavels",
+    "options": {
+      "1": "Wszystkie pomieszczenia znajdują się na tym samym poziomie i na jednej kondygnacji, nie dotyczy wejścia i przestrzeni za wejściem.",
+      "2": "Pomieszczenia znajdują się na jednej kondygnacji, ale na różnych poziomach.",
+      "3": "Pomieszczenia znajdują się na [number] kondygnacjach.",
+      "4": "Wszystkie pomieszczenia znajdują się na parterze."
+    },
+    "binding": {
+      "number": {
+        "type": "number",
+        "label": "Liczba kondygnacji na których znajduja się pomieszczenia",
+        "model": "howManyLavelsCount"
+      }
+    }
+  },
+  {
+    "type": "radio",
+    "label": "Różnice poziomów",
+    "model": "slopeAngle",
+    "options": {
+      "1": "Różnice poziomów można pokonać za pomocą pochylni o maksymalnym nachyleniu [slopeAngle1]%.",
+      "2": "Wszystkie korytarze są dostępne.",
+      "3": "Część korytarzy nie jest dostępna dla osób poruszających się na wózkach.",
+      "4": "Wszystkie korytarze są niedostępne dla osób na wózkach."
+    },
+    "binding": {
+      "slopeAngle1": {
+        "type": "number",
+        "label": "Nachylenie w stopniach",
+        "model": "slopeAngle1Count"
+      },
+      "slopeAngle2": {
+        "type": "number",
+        "label": "Nachylenie w stopniach",
+        "model": "slopeAngle2Count"
+      }
+    }
+  }
+]

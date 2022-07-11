@@ -1,0 +1,162 @@
+[
+  {
+    "type": "bool",
+    "label": "Wejście jest na poziomie gruntu. Nie ma przeszkód, by wjechać na wózku.",
+    "model": "entranceOnGroundLevel"
+  },
+  {
+    "type": "bool",
+    "label": "Do wejścia prowadzą schody.",
+    "model": "stairsLeadToEntrance"
+  },
+  {
+    "type": "bool",
+    "label": "Przed schodami znajduje się pas ostrzegawczy wykonany z wypukłych elementów.",
+    "model": "bumbBeforeStairs",
+    "logic": {
+      "stairsLeadToEntrance": ":ischecked"
+    }
+  },
+  {
+    "type": "bool",
+    "label": "Stopnie są oznaczone kontrastowo.",
+    "model": "stairsAreContrasted",
+    "logic": {
+      "stairsLeadToEntrance": ":ischecked"
+    }
+  },
+  {
+    "type": "bool",
+    "label": "Przy schodach znajduje się poręcz.",
+    "model": "handLeadAlongStairs",
+    "logic": {
+      "stairsLeadToEntrance": ":ischecked"
+    }
+  },
+  {
+    "type": "bool",
+    "label": "Do wejścia doprowadzona jest stała pochylnia o nachyleniu [number]%.",
+    "model": "pochylniaONachyleniu",
+    "binding": {
+      "number": {
+        "type": "number",
+        "label": "Wartość nachylenia",
+        "model": "stairsLeadToEntrance1212"
+      }
+    }
+  },
+  {
+    "type": "bool",
+    "label": "Istnieje możliwość rozłożenia przenośnej rampy. Zawiadom nas o tym wcześniej.",
+    "model": "mozliwoscPrzenosnejRampy"
+  },
+  {
+    "type": "bool",
+    "label": "Różnicę wysokości możesz pokonać za pomocą platformy przyschodowej.",
+    "model": "jestPlatformaPrzyschodowa"
+  },
+  {
+    "type": "textarea",
+    "label": "Dodatkowe informacje",
+    "model": "extraData"
+  },
+  {
+    "type": "bool",
+    "label": "Przestrzeń manewrowa przed wejściem wynosi [number] centymetrów.",
+    "model": "przestrzenManewrowaPrzedWejsciem",
+    "binding": {
+      "number": {
+        "type": "number",
+        "label": "Wielkość przestrzeni manewrowej",
+        "model": "wielkoscPrzestrzeniManewrowej"
+      }
+    }
+  },
+  {
+    "type": "bool",
+    "label": "Drzwi są obrotowe.",
+    "model": "whereDoor"
+  },
+  {
+    "type": "bool",
+    "label": "Drzwi otwierają się automatycznie.",
+    "model": "autoDoor"
+  },
+  {
+    "type": "bool",
+    "label": "Drzwi są zawsze otwarte.",
+    "model": "alwaysOpened"
+  },
+  {
+    "type": "bool",
+    "label": "Drzwi musisz otworzyć ręcznie.",
+    "model": "mustHandOpen"
+  },
+  {
+    "type": "bool",
+    "label": "Otwierają się na zewnątrz.",
+    "model": "openToOutside"
+  },
+  {
+    "type": "radio",
+    "label": "Siła potrzebna do otwarcia drzwi",
+    "model": "openToOutside",
+    "options": {
+      "1": "Otworzenie drzwi nie wymaga dużej siły.",
+      "2": "Otworzenie drzwi wymaga dużej siły."
+    }
+  },
+  {
+    "type": "bool",
+    "label": "Drzwi mają wygodną i ergonomiczną klamkę.",
+    "model": "handyHandle"
+  },
+  {
+    "type": "bool",
+    "label": "Można je łatwo utrzymać w pozycji otwartej.",
+    "model": "easyToHold"
+  },
+  {
+    "type": "bool",
+    "label": "Szerokość otworu wejściowego wynosi [number] centymetrów.",
+    "model": "widthOfOpenDoors",
+    "binding": {
+      "number": {
+        "type": "number",
+        "label": "Szerokość w cm",
+        "model": "widthOfOpenDoorsNumber"
+      }
+    }
+  },
+  {
+    "type": "bool",
+    "label": "Drzwi są przeźroczyste i [boolen] kontrastowo oznaczone.",
+    "model": "transparentDoors",
+    "binding": {
+      "boolen": {
+        "type": "select",
+        "label": "Czy drzwi są kontrastowo oznaczone",
+        "model": "areDoorsOznakowane",
+        "options": {
+          "są": "są",
+          "nie są": "nie są"
+        }
+      }
+    }
+  },
+  {
+    "type": "bool",
+    "label": "Skorzystaj z dzwonka przy drzwiach.",
+    "model": "useDoorBell"
+  },
+  {
+    "type": "bool",
+    "label": "Skorzystaj z domofonu przy drzwiach.",
+    "model": "useDomofon"
+  },
+  {
+    "type": "textarea",
+    "label": "Jeżeli nie możesz skorzystać z głównego wejścia",
+    "model": "ifCantUseEntrance"
+  }
+]

@@ -1,0 +1,166 @@
+[
+  {
+    "type": "bool",
+    "label": "Na inne kondygnacje możesz się dostać za pomocą schodów",
+    "model": "canGoByStairs"
+  },
+  {
+    "type": "bool",
+    "label": "Możesz skorzystać z windy.",
+    "model": "canGoByElevator"
+  },
+  {
+    "model": "stairs",
+    "type": "fieldset",
+    "label": "Schody",
+    "children": [
+      {
+        "type": "text",
+        "label": "Nazwa",
+        "model": "stairsName"
+      },
+      {
+        "type": "bool",
+        "label": "Ciąg schodów składa się z [count] stopni.",
+        "model": "numberOfSteps",
+        "binding": {
+          "count": {
+            "type": "number",
+            "label": "Liczba stopni",
+            "model": "numberOfStepsCount"
+          }
+        }
+      },
+      {
+        "type": "bool",
+        "label": "Stopień ma wysokość [stepHeight] centymetrów.",
+        "model": "stepHeigh",
+        "binding": {
+          "stepHeight": {
+            "type": "number",
+            "label": "Wysokość stopnia",
+            "model": "stepHeighCount"
+          }
+        }
+      },
+      {
+        "type": "bool",
+        "label": "Przy schodach znajduje się poręcz wzdłuż całego ciągu.",
+        "model": "hasHandRail"
+      },
+      {
+        "type": "bool",
+        "label": "Stopnie są oznaczone kontrastowo",
+        "model": "hasHighContrastNosing"
+      },
+      {
+        "type": "bool",
+        "label": "Przed schodami znajdują się dotykowe pasy ostrzegawcze.",
+        "model": "hasTactileSafetyStrips"
+      }
+    ]
+  },
+  {
+    "model": "elevator",
+    "type": "fieldset",
+    "label": "Winda",
+    "children": [
+      {
+        "type": "radio",
+        "label": "Drzwi",
+        "model": "elevatorDor",
+        "options": {
+          "1": "Drzwi windy otwierają się automatycznie",
+          "2": "Drzwi musisz otworzyć ręcznie"
+        }
+      },
+      {
+        "type": "bool",
+        "label": "Szerokość drzwi wynosi [width] centymetrów",
+        "model": "elevatorDorWidth",
+        "binding": {
+          "width": {
+            "type": "number",
+            "label": "Szerokość drzwi windy",
+            "model": "elevatorDorWidthNumber"
+          }
+        }
+      },
+      {
+        "type": "radio",
+        "label": "Lokalizacja windy",
+        "model": "elevatorLocation",
+        "options": {
+          "1": "Winda znajduje się w budynku",
+          "2": "Winda znajduje się poza budynkiem"
+        }
+      },
+      {
+        "type": "text",
+        "label": "Windę znajdziesz",
+        "model": "elevatorLocationDesc"
+      },
+      {
+        "type": "bool",
+        "label": "Kabina windy ma głębokość [cabinLength] centymetrów i szerokość [cabinWidth] centymetrów.",
+        "model": "elevatorRoom",
+        "binding": {
+          "cabinLength": {
+            "type": "number",
+            "label": "Głębokość kabiny windy",
+            "model": "elevatorRoomLengthNumber"
+          },
+          "cabinWidth": {
+            "type": "number",
+            "label": "Szerokość kabiny windy",
+            "model": "elevatorRoomWidthNumber"
+          }
+        }
+      },
+      {
+        "type": "bool",
+        "label": "Przyciski sterujące mają opisy w alfabecie Braille’a.",
+        "model": "hasBrailleText"
+      },
+      {
+        "type": "bool",
+        "label": "Przyciski sterujące mają duże  oznaczenia.",
+        "model": "hasLargePrint"
+      },
+      {
+        "type": "bool",
+        "label": "Oznaczenia są kontrastowe.",
+        "model": "isHighContrast"
+      },
+      {
+        "type": "bool",
+        "label": "Najniższe przyciski sterujące znajdują się na wysokości [number] centymetrów.",
+        "model": "heightOfControls",
+        "binding": {
+          "number": {
+            "type": "number",
+            "label": "wysokość przycisków sterujących",
+            "model": "heightOfControlsNumber"
+          }
+        }
+      },
+      {
+        "type": "bool",
+        "label": "W windzie są komunikaty głosowe.",
+        "model": "hasSpeech"
+      },
+      {
+        "type": "bool",
+        "label": "W razie problemów - zadzwoń do obsługi na numer telefonu: [number]",
+        "model": "servicePhone",
+        "binding": {
+          "number": {
+            "type": "text",
+            "label": "nr telefonu alarmowebo",
+            "model": "servicePhoneNumber"
+          }
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "type": "textarea",
+    "label": "Opis przestrzeni",
+    "model": "lobbyDesc"
+  },
+  {
+    "type": "bool",
+    "label": "Plan dotykowy rozmieszczenia pomieszczeń znajduje się [text]",
+    "model": "isTactilePlan",
+    "binding": {
+      "text": {
+        "type": "text",
+        "label": "opis lokalizacji palnu dotykowego",
+        "model": "isTactilePlanDesc"
+      }
+    }
+  },
+  {
+    "type": "bool",
+    "label": "Plan rozmieszczenia pomieszczeń znajduje się w [text] i jest wykonany w kontrastowych kolorach oraz dużymi czcionkami.",
+    "model": "isLargePrintPlan",
+    "binding": {
+      "text": {
+        "type": "text",
+        "label": "opis lokalizacji palnu rozmieszczeń",
+        "model": "isLargePrintPlanDesc"
+      }
+    }
+  },
+  {
+    "type": "bool",
+    "label": "W pomieszczeniu zamontowany jest system dźwiękowy [text]",
+    "model": "isAudioInformationSystem",
+    "binding": {
+      "text": {
+        "type": "text",
+        "label": "Rodzaj systemu dźwiękowego",
+        "model": "isAudioInformationSystemDesc"
+      }
+    }
+  },
+  {
+    "type": "bool",
+    "label": "Ścieżka dotykowa prowadzi do [text]",
+    "model": "hasTactileGuideStrips",
+    "binding": {
+      "text": {
+        "type": "text",
+        "label": "Gdzie kieruje ścieżka dotykowa",
+        "model": "hasTactileGuideStripsDesc"
+      }
+    }
+  },
+  {
+    "type": "bool",
+    "label": "Przestrzeń jest zazwyczaj cicha i spokojna.",
+    "model": "isQuiet"
+  },
+  {
+    "type": "bool",
+    "label": "Pomieszczenie jest dobrze oświetlone.",
+    "model": "isWellLit"
+  },
+  {
+    "type": "bool",
+    "label": "Punkt obsługi znajduje się [text]",
+    "model": "customerServiceLocation",
+    "binding": {
+      "text": {
+        "type": "text",
+        "label": "Gdzie znajduje się punkt obsługi.",
+        "model": "customerServiceLocationDesc"
+      }
+    }
+  },
+  {
+    "type": "bool",
+    "label": "Punkt obsługi wyposażony jest w pętlę indukcyjną. ",
+    "model": "hasInductionLoop"
+  },
+  {
+    "type": "bool",
+    "label": "W punkcie obsługi dostępna jest usługa tłumaczenia na język migowy.",
+    "model": "hasSignLanguageInterpretation"
+  },
+  {
+    "type": "bool",
+    "label": "Blat jest obniżony i może do niego podjechać osoba na wózku.",
+    "model": "isDeskProperHeight"
+  }
+]

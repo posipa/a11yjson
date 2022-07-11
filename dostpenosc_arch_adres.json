@@ -1,0 +1,38 @@
+[
+  {
+    "type": "text",
+    "label": "Województwo",
+    "model": "state",
+    "desc": " "
+  },
+  {
+    "type": "text",
+    "label": "Powiat",
+    "model": "county",
+    "desc": " "
+  },
+  {
+    "type": "text",
+    "label": "Gmina",
+    "model": "commune",
+    "desc": " "
+  },
+  {
+    "type": "text",
+    "label": "Miejscowość",
+    "model": "town",
+    "desc": " "
+  },
+  {
+    "type": "text",
+    "label": "Ulica i nr",
+    "model": "street",
+    "desc": " "
+  },
+  {
+    "type": "text",
+    "label": "kod pocztowy i poczta",
+    "model": "post",
+    "desc": " "
+  }
+]

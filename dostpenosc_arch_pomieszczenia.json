@@ -1,0 +1,19 @@
+[
+  {
+    "type": "radio",
+    "label": "Dostępność pomieszczeń",
+    "model": "roomsAccessability",
+    "options": {
+      "1": "Wszystkie pomieszczenia są dostępne dla osób na wózkach.",
+      "2": "Około [number]% pomieszczeń jest dostępnych dla osób na wózkach.",
+      "3": "Pomieszczenia nie są dostępne dla osób na wózkach."
+    },
+    "binding": {
+      "number": {
+        "type": "number",
+        "label": "Liczba dostępnych pomieszczeń",
+        "model": "roomsAccessabilityNumber"
+      }
+    }
+  }
+]
