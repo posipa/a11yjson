@@ -1,71 +1,72 @@
 [
   {
-    "model": "additionalInformation",
-    "label": "Dodatkowe informacje",
-    "desc": "Tu możesz podać dodatkowe informacje, które mogą być istotne dla klientów z niepełnosprawnościami. Ta część nie jest obowiązkowa, więc możesz ją pominąć.",
-    "children": [
+    "model" : "additionalInformation",
+    "label" : "Dodatkowe informacje",
+    "desc" : "Tu możesz podać dodatkowe informacje, które mogą być istotne dla klientów z niepełnosprawnościami. Ta część nie jest obowiązkowa, więc możesz ją pominąć.",
+    "children" : [
       {
-        "model": "ETRInfo",
-        "type": "bool",
-        "label": "Informacja o naszej działalności w tekście łatwym do czytania (ETR): [url]",
-        "binding": {
-          "url": {
-            "type": "url",
-            "label": "Adres URL",
-            "model": "ETR_URL",
-            "width": "300px"
+        "model" : "ETRInfo",
+        "type" : "bool",
+        "label" : "Informacja o naszej działalności w tekście łatwym do czytania (ETR): [url]",
+        "binding" : {
+          "url" : {
+            "type" : "url",
+            "label" : "Adres URL",
+            "model" : "ETR_URL",
+            "width" : "300px",
+            "desc" : ""
           }
         }
       },
       {
-        "model": "PJMInfo",
-        "type": "bool",
-        "label": "Informacja o naszej działalności w języku migowym (PJM): [url]",
-        "binding": {
-          "url": {
-            "type": "url",
-            "label": "Adres URL",
-            "model": "PJM_URL",
-            "width": "300px"
+        "model" : "PJMInfo",
+        "type" : "bool",
+        "label" : "Informacja o naszej działalności w języku migowym (PJM): [url]",
+        "binding" : {
+          "url" : {
+            "type" : "url",
+            "label" : "Adres URL",
+            "model" : "PJM_URL",
+            "width" : "300px"
           }
         }
       },
       {
-        "model": "report",
-        "type": "bool",
-        "label": "Aktualny raport z zapewnienia dostępności: [url]",
-        "binding": {
-          "url": {
-            "type": "url",
-            "label": "Adres URL",
-            "model": "report_URL",
-            "width": "300px"
+        "model" : "report",
+        "type" : "bool",
+        "label" : "Aktualny raport z zapewnienia dostępności: [url]",
+        "binding" : {
+          "url" : {
+            "type" : "url",
+            "label" : "Adres URL",
+            "model" : "report_URL",
+            "width" : "300px"
           }
         }
       },
       {
-        "model": "PJMTranslation",
-        "type": "bool",
-        "label": "Jak wnioskować o tłumacza polskiego języka migowego: [url]",
-        "binding": {
-          "url": {
-            "type": "url",
-            "label": "Adres URL",
-            "model": "PJMTranslation_URL",
-            "width": "300px"
+        "model" : "PJMTranslation",
+        "type" : "bool",
+        "label" : "Jak wnioskować o tłumacza polskiego języka migowego: [url]",
+        "binding" : {
+          "url" : {
+            "type" : "url",
+            "label" : "Adres URL",
+            "model" : "PJMTranslation_URL",
+            "width" : "300px"
           }
         }
       },
       {
-        "model": "covid-19",
-        "type": "bool",
-        "label": "Prosimy o noszenie maseczek w budynku."
+        "model" : "covid-19",
+        "type" : "bool",
+        "label" : "Prosimy o noszenie maseczek w budynku."
       },
       {
-        "model": "otherInfo",
-        "label": "Pozostałe informacje",
-        "type": "textarea",
-        "desc": "Tu możesz wpisać jeszcze inne informacje, które uznasz za istotne."
+        "model" : "otherInfo",
+        "label" : "Pozostałe informacje",
+        "type" : "textarea",
+        "desc" : "Tu możesz wpisać jeszcze inne informacje, które uznasz za istotne."
       }
     ]
   }

@@ -1,180 +1,186 @@
 [
   {
-    "type": "bool",
-    "label": "Nie mamy dostępnej toalety.",
-    "model": "noAccessibleRestroom"
+    "type" : "bool",
+    "label" : "Nie mamy dostępnej toalety.",
+    "model" : "noAccessibleRestroom"
   },
   {
-    "type": "bool",
-    "label": "W budynku jest toaleta dostępna dla osób z niepełnosprawnością.",
-    "model": "accessibleRestroom"
+    "type" : "bool",
+    "label" : "W budynku jest toaleta dostępna dla osób z niepełnosprawnością.",
+    "model" : "accessibleRestroom"
   },
   {
-    "type": "textarea",
-    "label": "Lokalizacja dostępnej toalety",
-    "model": "extraData",
-    "desc": "Opisz, w jakim miejscu osoba na wózku może znaleźć dostępną toaletę, żeby nie musiała jej szukać. W szczególności opisz, na której kondygnacji (piętrze) jest toaleta i w którą stronę należy się przemieszczać.",
-    "example": "Dostępna toaleta znajduje się na parterze, na lewo od wejścia głównego."
+    "type" : "textarea",
+    "label" : "Lokalizacja dostępnej toalety",
+    "model" : "extraData",
+    "desc" : "Opisz, w jakim miejscu osoba na wózku może znaleźć dostępną toaletę, żeby nie musiała jej szukać. W szczególności opisz, na której kondygnacji (piętrze) jest toaleta i w którą stronę należy się przemieszczać.",
+    "example" : "Dostępna toaleta znajduje się na parterze, na lewo od wejścia głównego."
   },
   {
-    "type": "bool",
-    "label": "Aby je otworzyć, musisz mieć kartę.",
-    "model": "needsKeyCard",
-    "desc": "Jeżeli do otwarcia drzwi łazienki potrzebna jest karta, poinformuj o tym."
+    "type" : "bool",
+    "label" : "Aby otworzyć drzwi do łazienki, musisz mieć kartę.",
+    "model" : "needsKeyCard",
+    "desc" : "Jeżeli do otwarcia drzwi łazienki potrzebna jest karta, poinformuj o tym."
   },
   {
-    "type": "bool",
-    "label": "Aby otworzyć, musisz wpisać kod.",
-    "model": "needsKeyPad",
-    "desc": "Zaznacz to pole, jeżeli otwarcie drzwi do łazienki wymaga wpisania kodu."
+    "type" : "bool",
+    "label" : "Aby otworzyć drzwi do łazienki, musisz wpisać kod.",
+    "model" : "needsKeyPad",
+    "desc" : "Zaznacz to pole, jeżeli otwarcie drzwi do łazienki wymaga wpisania kodu."
   },
   {
-    "type": "bool",
-    "label": "Otwarcie drzwi wymaga klucza.",
-    "model": "needsKey",
-    "desc": "Zaznacz to pole, jeżeli łazienka jest zamknięta i trzeba użyć klucza do jej otwarcia."
+    "type" : "bool",
+    "label" : "Drzwi musisz otworzyć kluczem.",
+    "model" : "needsKey",
+    "desc" : "Zaznacz to pole, jeżeli łazienka jest zamknięta i trzeba użyć klucza do jej otwarcia."
   },
   {
-    "type": "bool",
-    "label": "Otwierają się po naciśnięciu przycisku.",
-    "model": "needsSwitchToOpen",
-    "desc": "Zaznacz to pole, jeżeli drzwi są otwierane przyciskiem, a nie klamką."
+    "type" : "bool",
+    "label" : "Drzwi otwierają się po naciśnięciu przycisku.",
+    "model" : "needsSwitchToOpen",
+    "desc" : "Zaznacz to pole, jeżeli drzwi są otwierane przyciskiem, a nie klamką."
   },
   {
-    "type": "bool",
-    "label": "Drzwi otwierają się na zewnątrz.",
-    "model": "doorOpensToOutside",
-    "desc": "Zaznacz to pole, jeżeli są uchylne i otwierają się na zewnątrz, czyli w stronę korytarza. Nie zaznaczaj go, jeżeli otwierają się do środka lub są rozsuwane."
+    "type" : "bool",
+    "label" : "Drzwi otwierają się na zewnątrz.",
+    "model" : "doorOpensToOutside",
+    "desc" : "Zaznacz to pole, jeżeli drzwi są uchylne i otwierają się na zewnątrz, czyli w stronę korytarza. Nie zaznaczaj go, jeżeli otwierają się do środka lub są rozsuwane."
   },
   {
-    "type": "bool",
-    "label": "Łatwo pozostają w pozycji otwartej.",
-    "model": "isEasyToHoldOpen",
-    "desc": "Zaznacz to pole jeżeli drzwi po otwarciu nie zamykają się samoczynnie."
+    "type" : "bool",
+    "label" : "Drzwi łatwo pozostają w pozycji otwartej.",
+    "model" : "isEasyToHoldOpen",
+    "desc" : "Zaznacz to pole jeżeli drzwi po otwarciu nie zamykają się samoczynnie lub można je łatwo zablokować i odblokować."
   },
   {
-    "type": "bool",
-    "label": " Nie ma przeszkód, by wjechać na wózku.",
-    "model": "isLevel",
-    "desc": "Zaznacz to pole, jeżeli wejście do łazienki  jest na poziomie gruntu. Próg nie powinien być większy niż 2 cm."
+    "type" : "bool",
+    "label" : " Nie ma przeszkód, by wjechać na wózku do łazienki.",
+    "model" : "isLevel",
+    "desc" : "Zaznacz to pole, jeżeli wejście do łazienki  jest na poziomie gruntu. Próg nie powinien być większy niż 2 cm. Nie zaznaczaj, jeżelido drzwi prowadzi pochylnia lub schody."
   },
   {
-    "type": "bool",
-    "label": "Do łazienki prowadzą schody.",
-    "model": "stairsLeadToEntrance",
-    "desc": "Zaznacz to pole w przypadku, gdy dostanie się do łazienki wymaga pokonania jednego lub więcej schodków"
+    "type" : "bool",
+    "label" : "Do łazienki prowadzą schody.",
+    "model" : "stairsLeadToEntrance",
+    "desc" : "Zaznacz to pole w przypadku, gdy dostanie się do łazienki wymaga pokonania jednego lub więcej schodków"
   },
   {
-    "type": "textarea",
-    "label": "Dodatkowe informacje",
-    "model": "extraData2",
-    "desc": "Tu wpisz dodatkowe informacje, które mogą być przydatne dla osoby chcącej skorzystać z toalety. W szczególności opisz, skąd można wziąć kod, kartę lub klucz do otwarcia łazienki, jeżeli to niezbędne.",
-    "example": "Drzwi do łazienki otworzysz za pomocą karty otrzymanej w recepcji."
+    "type" : "textarea",
+    "label" : "Dodatkowe informacje",
+    "model" : "extraData2",
+    "desc" : "Tu wpisz dodatkowe informacje, które mogą być przydatne dla osoby chcącej skorzystać z toalety. W szczególności opisz, skąd można wziąć kod, kartę lub klucz do otwarcia łazienki, jeżeli to niezbędne.",
+    "example" : "Drzwi do łazienki otworzysz za pomocą karty otrzymanej w recepcji."
   },
   {
-    "type": "bool",
-    "label": "Drzwi otwierają się automatycznie.",
-    "model": "autoDoor"
+    "type" : "bool",
+    "label" : "Drzwi otwierają się automatycznie.",
+    "model" : "autoDoor",
+    "desc" : "Zazmacz to pole, jeżeli drzwi otwierają się samoczynnie, na przykład po wpisaniu kodu lub naciśnięcia przycisku."
   },
   {
-    "type": "bool",
-    "label": "Szerokość otworu wejściowego wynosi [number] centymetrów.",
-    "model": "width",
-    "binding": {
-      "number": {
-        "type": "number",
-        "label": "Szerokość w cm",
-        "model": "width"
+    "type" : "bool",
+    "label" : "Szerokość otworu wejściowego wynosi [number] centymetrów.",
+    "model" : "width",
+    "binding" : {
+      "number" : {
+        "type" : "number",
+        "label" : "Szerokość w cm",
+        "model" : "width"
       }
     }
   },
   {
-    "type": "bool",
-    "label": "W toalecie jest przewijak dla dzieci.",
-    "model": "hasChangingTableForBabies",
-    "desc": "Zaznacz to pole, jeżeli w łazience jest przewijak dla dzieci. Rodzice z maluchami będą Ci wdzięczne."
+    "type" : "bool",
+    "label" : "W toalecie jest przewijak dla dzieci.",
+    "model" : "hasChangingTableForBabies",
+    "desc" : "Zaznacz to pole, jeżeli w łazience jest przewijak dla dzieci. Rodzice z maluchami będą Ci wdzięczni."
   },
   {
-    "type": "bool",
-    "label": "W toalecie jest przewijak dla osób dorosłych.",
-    "model": "hasChangingTableForAdults",
-    "desc": "Zaznacz to pole, jeżeli w łazience znajduje się przewijak dla osób dorosłych."
+    "type" : "bool",
+    "label" : "W toalecie jest przewijak dla osób dorosłych.",
+    "model" : "hasChangingTableForAdults",
+    "desc" : "Zaznacz to pole, jeżeli w łazience znajduje się przewijak dla osób dorosłych."
   },
   {
-    "type": "bool",
-    "label": "W toalecie jest zamontowana linka do wzywania pomocy.",
-    "model": "hasEmergencyPullstring",
-    "desc": "Zaznacz to pole, jeżeli w toalecie jest sznurek do wezwania pomocy w razie wypadku."
+    "type" : "bool",
+    "label" : "W toalecie jest zamontowana linka do wzywania pomocy.",
+    "model" : "hasEmergencyPullstring",
+    "desc" : "Zaznacz to pole, jeżeli w toalecie jest sznurek do wezwania pomocy w razie wypadku."
   },
   {
-    "type": "bool",
-    "label": "W toalecie jest zamontowany przycisk do wzywania pomocy.",
-    "model": "hasEmergencySwitch",
-    "desc": "Zaznacz to pole, jeżeli w toalecie jest  przycisk do wezwania pomocy w razie wypadku."
+    "type" : "bool",
+    "label" : "W toalecie jest zamontowany przycisk do wzywania pomocy.",
+    "model" : "hasEmergencySwitch",
+    "desc" : "Zaznacz to pole, jeżeli w toalecie jest  przycisk do wezwania pomocy w razie wypadku."
   },
   {
-    "type": "bool",
-    "label": "Na ścianach są zamontowane poręcze.",
-    "model": "hasSupportRails",
-    "desc": "Zaznacz to pole, jeżeli na ścianach są poręcze, których może się przytrzymać i podeprzeć użytkownik toalety."
+    "type" : "bool",
+    "label" : "Na ścianach są zamontowane poręcze.",
+    "model" : "hasSupportRails",
+    "desc" : "Zaznacz to pole, jeżeli na ścianach są poręcze, których może się przytrzymać i podeprzeć użytkownik toalety."
   },
   {
-    "type": "bool",
-    "label": "Przestrzeń manewrowa  wynosi [number] centymetrów.",
-    "model": "turningSpaceInside",
-    "binding": {
-      "number": {
-        "type": "number",
-        "label": "Wielkość przestrzeni manewrowej",
-        "model": "turningSpaceInside"
+    "type" : "bool",
+    "label" : "Przestrzeń manewrowa  wynosi [number] centymetrów.",
+    "model" : "turningSpaceInside",
+    "binding" : {
+      "number" : {
+        "type" : "number",
+        "label" : "Wielkość przestrzeni manewrowej",
+        "model" : "turningSpaceInside",
+        "desc" : "Wymierz dostępną przestrzeń w łazience, na której może poruszać się osoba na wózku. Podaj długość największego kwadratu, który można narysować na podłodze. Uwzględnij elementy wystające, na przykład miskę umywalkiporęcze i podobne elementy."
       }
     }
   },
   {
-    "type": "bool",
-    "label": "Przestrzeń manewrowa przed ustępem wynosi [number] centymetrów.",
-    "model": "spaceInFront",
-    "binding": {
-      "number": {
-        "type": "number",
-        "label": "w centymetrach",
-        "model": "spaceInFront"
+    "type" : "bool",
+    "label" : "Przestrzeń manewrowa przed ustępem wynosi [number] centymetrów.",
+    "model" : "spaceInFront",
+    "binding" : {
+      "number" : {
+        "type" : "number",
+        "label" : "w centymetrach",
+        "model" : "spaceInFront",
+        "desc" : "Wymierz przestrzeń manewrową przed miską ustępową, czyli ten obszar, który widzi użytkownik siedzący na sedesie. Podaj długość boku największego kwadratu, jaki można narysować w tej przestrzeni."
       }
     }
   },
   {
-    "type": "bool",
-    "label": "Przestrzeń po lewej wynosi [number] centymetrów.",
-    "model": "spaceOnUsersLeftSide",
-    "binding": {
-      "number": {
-        "type": "number",
-        "label": "w centymetrach",
-        "model": "spaceOnUsersLeftSide"
+    "type" : "bool",
+    "label" : "Przestrzeń po lewej wynosi [number] centymetrów.",
+    "model" : "spaceOnUsersLeftSide",
+    "binding" : {
+      "number" : {
+        "type" : "number",
+        "label" : "w centymetrach",
+        "model" : "spaceOnUsersLeftSide",
+        "desc" : "Wymierz przestrzeń po lewej stronie ustępu, patrząc od strony osoby siedzącej na sedesie. Podaj długość największego kwadratu, jaki można tam narysować na podłodze."
       }
     }
   },
   {
-    "type": "bool",
-    "label": "Przestrzeń manewrowa po prawej stronie ustępu wynosi [number] centymetrów.",
-    "model": "spaceOnUsersRightSide",
-    "binding": {
-      "number": {
-        "type": "number",
-        "label": "w centymetrach",
-        "model": "spaceOnUsersRightSide"
+    "type" : "bool",
+    "label" : "Przestrzeń manewrowa po prawej stronie ustępu wynosi [number] centymetrów.",
+    "model" : "spaceOnUsersRightSide",
+    "binding" : {
+      "number" : {
+        "type" : "number",
+        "label" : "w centymetrach",
+        "model" : "spaceOnUsersRightSide",
+        "desc" : "Wymierz przestrzeń po prawej stronie ustępu, patrząc od strony osoby siedzącej na sedesie. Podaj długość największego kwadratu, jaki można tam narysować na podłodze."
       }
     }
   },
   {
-    "type": "radio",
-    "label": "Pochwyty przy ustępie",
-    "model": "GrabBars",
-    "options": {
-      "Nie ma pochwytów przy ustępie.": "Nie ma pochwytów przy ustępie.",
-      "Pochwyty są po obu stronach ustępu.": "Pochwyty są po obu stronach ustępu.",
-      "Pochwyt jest po lewej stronie ustępu.": "Pochwyt jest po lewej stronie ustępu.",
-      "Pochwyt jest po prawej stronie ustępu.": "Pochwyt jest po prawej stronie ustępu."
-    }
+    "type" : "radio",
+    "label" : "Pochwyty przy ustępie",
+    "model" : "GrabBars",
+    "options" : {
+      "Nie ma pochwytów przy ustępie." : "Nie ma pochwytów przy ustępie.",
+      "Pochwyty są po obu stronach ustępu." : "Pochwyty są po obu stronach ustępu.",
+      "Pochwyt jest po lewej stronie ustępu." : "Pochwyt jest po lewej stronie ustępu.",
+      "Pochwyt jest po prawej stronie ustępu." : "Pochwyt jest po prawej stronie ustępu."
+    },
+    "desc" : "Zaznacz jedną z opcji, by poinformować użytkownika, po której stronie ustępu znajdują się poręcze. Pomagają one w przesiadaniu się z wózka na sedes i z powrotem."
   }
 ]
