@@ -1,17 +1,18 @@
 [
   {
-    "type": "bool",
-    "label": "Możesz przyjść z psem asystującym lub psem przewodnikiem. Pamiętaj o certyfikacie psa asystującego i zaświadczeniu o szczepieniu.",
-    "model": "allowsGuideDogs"
+    "type" : "bool",
+    "label" : "Możesz przyjść z psem asystującym lub psem przewodnikiem. Pamiętaj o certyfikacie psa asystującego i zaświadczeniu o szczepieniu.",
+    "model" : "allowsGuideDogs"
   },
   {
-    "type": "bool",
-    "label": "Pies musi mieć kaganiec. Nie dotyczy psów przewodników.",
-    "model": "dogsNeedMuzzle"
+    "type" : "bool",
+    "label" : "Pies musi mieć kaganiec. Nie dotyczy psów przewodników.",
+    "model" : "dogsNeedMuzzle"
   },
   {
-    "type": "bool",
-    "label": "Zapewniamy wodę dla zwierzaka.",
-    "model": "suppliesWaterForPets"
+    "type" : "bool",
+    "label" : "Zapewniamy wodę dla zwierzaka.",
+    "model" : "suppliesWaterForPets",
+    "desc" : ""
   }
 ]
