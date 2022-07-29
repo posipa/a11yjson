@@ -1,81 +1,81 @@
 [
   {
-    "type": "radio",
-    "label": "Miejsca parkingowe dla osób niepełnosprawnych",
-    "model": "forWheelchairUsers",
-    "options": {
-      "1": "Możesz skorzystać z miejsca parkingowego. Na parkingu wyznaczyliśmy [number] miejsc przeznaczonych dla osób niepełnosprawnych. Pamiętaj o zabraniu karty parkingowej i umieszczeniu jej za szybą.",
-      "2": "Nie mamy wyznaczonych miejsc parkingowych dla osób niepełnosprawnych.",
-      "3": "Nie mamy parkingu."
+    "type" : "radio",
+    "label" : "Miejsca parkingowe dla osób niepełnosprawnych",
+    "model" : "forWheelchairUsers",
+    "options" : {
+      "1" : "Możesz skorzystać z miejsca parkingowego. Na parkingu wyznaczyliśmy [number] miejsc przeznaczonych dla osób niepełnosprawnych. Pamiętaj o zabraniu karty parkingowej i umieszczeniu jej za szybą.",
+      "2" : "Nie mamy wyznaczonych miejsc parkingowych dla osób niepełnosprawnych.",
+      "3" : "Nie mamy parkingu."
     },
-    "raport": [
+    "raport" : [
       {
-        "op":"eq",
-        "cond":2,
-        "info":"Musisz wyznaczyć miejsce parkingowe dla osób niepełnosprawnych"
+        "op" : "eq",
+        "cond" : "2",
+        "info" : "Musisz wyznaczyć miejsce parkingowe dla osób niepełnosprawnych"
       }
     ],
-    "binding": {
-      "number": {
-        "type": "number",
-        "label": "Liczba miejsc parkingowych przeznaczonych dla osób niepełnosprawnych",
-        "model": "forWheelchairUsersCount",
-        "raport": [
+    "binding" : {
+      "number" : {
+        "type" : "number",
+        "label" : "Liczba miejsc parkingowych przeznaczonych dla osób niepełnosprawnych",
+        "model" : "forWheelchairUsersCount",
+        "raport" : [
           {
-            "op":"eq",
-            "cond":1,
-            "info":"Jedno miejsce postojowe jest możliwe przy całkowitej liczbie wszystkich stanowisk 6-15"
+            "op" : "eq",
+            "cond" : "1",
+            "info" : "Jedno miejsce postojowe jest możliwe przy całkowitej liczbie wszystkich stanowisk 6-15"
           },
           {
-            "op":"eq",
-            "cond":2,
-            "info":"Dwa miejsca postojowe są możliwe przy całkowitej liczbie wszystkich stanowisk 16-40"
+            "op" : "eq",
+            "cond" : "2",
+            "info" : "Dwa miejsca postojowe są możliwe przy całkowitej liczbie wszystkich stanowisk 16-40"
           },
           {
-            "op":"eq",
-            "cond":3,
-            "info":"Trzy miejsca postojowe są możliwe przy całkowitej liczbie wszystkich stanowisk 41-100"
+            "op" : "eq",
+            "cond" : "3",
+            "info" : "Trzy miejsca postojowe są możliwe przy całkowitej liczbie wszystkich stanowisk 41-100"
           },
           {
-            "op":"gt",
-            "cond":3,
-            "info":"Wartość powyżej trzech miejsc postojowych musi spełniać wymogi 4% całkowitej liczby wszystkich stanowisk"
+            "op" : "gt",
+            "cond" : "3",
+            "info" : "Wartość powyżej trzech miejsc postojowych musi spełniać wymogi 4% całkowitej liczby wszystkich stanowisk"
           }
         ]
       }
     }
   },
   {
-    "type": "bool",
-    "label": "Miejsca parkingowe są pomalowane na niebiesko i prawidłowo oznakowane.",
-    "model": "hasDedicatedSignage"
+    "type" : "bool",
+    "label" : "Miejsca parkingowe są pomalowane na niebiesko i prawidłowo oznakowane.",
+    "model" : "hasDedicatedSignage"
   },
   {
-    "type": "bool",
-    "label": "Od miejsca parkingowego do wejścia do budynku odległość wynosi około [number] metrów.",
-    "model": "distanceToEntrance",
-    "binding": {
-      "number": {
-        "type": "number",
-        "label": "Odległość parkingu od wejścia",
-        "model": "distanceToEntranceCount"
+    "type" : "bool",
+    "label" : "Od miejsca parkingowego do wejścia do budynku odległość wynosi około [number] metrów.",
+    "model" : "distanceToEntrance",
+    "binding" : {
+      "number" : {
+        "type" : "number",
+        "label" : "Odległość parkingu od wejścia",
+        "model" : "distanceToEntranceCount"
       }
     }
   },
   {
-    "type": "radio",
-    "label": "Odpłatność za parking",
-    "model": "paymentBySpace",
-    "options": {
-      "1": "Parking jest bezpłatny.",
-      "2": "Parking jest bezpłatny dla osób posiadających kartę parkingową.",
-      "3": "Parking jest płatny."
+    "type" : "radio",
+    "label" : "Odpłatność za parking",
+    "model" : "paymentBySpace",
+    "options" : {
+      "1" : "Parking jest bezpłatny.",
+      "2" : "Parking jest bezpłatny dla osób posiadających kartę parkingową.",
+      "3" : "Parking jest płatny."
     }
   },
   {
-    "type": "textarea",
-    "label": "Opis usytuowania parkingu",
-    "desc": "np.: Miejsca parkingowe znajdują się na dziedzińcu. Można na niego wjechać przez bramę. Szlaban otwiera strażnik, po okazaniu przepustki.",
-    "model": "parkingLocation"
+    "type" : "textarea",
+    "label" : "Opis usytuowania parkingu",
+    "desc" : "np.: Miejsca parkingowe znajdują się na dziedzińcu. Można na niego wjechać przez bramę. Szlaban otwiera strażnik, po okazaniu przepustki.",
+    "model" : "parkingLocation"
   }
 ]

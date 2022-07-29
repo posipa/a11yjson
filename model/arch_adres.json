@@ -1,12 +1,12 @@
 [
   {
-    "type": "text",
-    "label": "Województwo",
-    "model": "state",
-    "desc": " "
+    "type" : "text",
+    "label" : "Województwo",
+    "model" : "state",
+    "desc" : " "
   },
   {
-    "type": "text",
+    "type" : "text",
     "label": "Powiat",
     "model": "county",
     "desc": " "

@@ -1,47 +1,47 @@
 [
   {
-    "type": "bool",
-    "label": "Wejście jest na poziomie gruntu. Nie ma przeszkód, by wjechać na wózku.",
-    "model": "entranceOnGroundLevel"
+    "type" : "bool",
+    "label" : "Wejście jest na poziomie gruntu. Nie ma przeszkód, by wjechać na wózku.",
+    "model" : "entranceOnGroundLevel"
   },
   {
-    "type": "bool",
-    "label": "Do wejścia prowadzą schody.",
-    "model": "stairsLeadToEntrance"
+    "type" : "bool",
+    "label" : "Do wejścia prowadzą schody.",
+    "model" : "stairsLeadToEntrance"
   },
   {
-    "type": "bool",
-    "label": "Przed schodami znajduje się pas ostrzegawczy wykonany z wypukłych elementów.",
-    "model": "bumbBeforeStairs",
-    "logic": {
-      "stairsLeadToEntrance": ":ischecked"
+    "type" : "bool",
+    "label" : "Przed schodami znajduje się pas ostrzegawczy wykonany z wypukłych elementów.",
+    "model" : "bumbBeforeStairs",
+    "logic" : {
+      "stairsLeadToEntrance" : " :ischecked"
     }
   },
   {
-    "type": "bool",
-    "label": "Stopnie są oznaczone kontrastowo.",
-    "model": "stairsAreContrasted",
-    "logic": {
-      "stairsLeadToEntrance": ":ischecked"
+    "type" : "bool",
+    "label" : "Stopnie są oznaczone kontrastowo.",
+    "model" : "stairsAreContrasted",
+    "logic" : {
+      "stairsLeadToEntrance" : " :ischecked"
     }
   },
   {
-    "type": "bool",
-    "label": "Przy schodach znajduje się poręcz.",
-    "model": "handLeadAlongStairs",
-    "logic": {
-      "stairsLeadToEntrance": ":ischecked"
+    "type" : "bool",
+    "label" : "Przy schodach znajduje się poręcz.",
+    "model" : "handLeadAlongStairs",
+    "logic" : {
+      "stairsLeadToEntrance" : " :ischecked"
     }
   },
   {
-    "type": "bool",
-    "label": "Do wejścia doprowadzona jest stała pochylnia o nachyleniu [number]%.",
-    "model": "pochylniaONachyleniu",
-    "binding": {
-      "number": {
-        "type": "number",
-        "label": "Wartość nachylenia",
-        "model": "stairsLeadToEntrance1212"
+    "type" : "bool",
+    "label" : "Do wejścia doprowadzona jest stała pochylnia o nachyleniu [number]%.",
+    "model" : "pochylniaONachyleniu",
+    "binding" : {
+      "number" : {
+        "type" : "number",
+        "label" : "Wartość nachylenia",
+        "model" : "stairsLeadToEntrance1212"
       }
     }
   },

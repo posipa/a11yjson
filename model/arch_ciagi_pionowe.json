@@ -1,22 +1,22 @@
 [
   {
-    "type": "bool",
-    "label": "Na inne kondygnacje możesz się dostać za pomocą schodów",
-    "model": "canGoByStairs"
+    "type" : "bool",
+    "label" : "Na inne kondygnacje możesz się dostać za pomocą schodów",
+    "model" : "canGoByStairs"
   },
   {
-    "type": "bool",
-    "label": "Możesz skorzystać z windy.",
-    "model": "canGoByElevator"
+    "type" : "bool",
+    "label" : "Możesz skorzystać z windy.",
+    "model" : "canGoByElevator"
   },
   {
-    "model": "stairs",
-    "type": "fieldset",
-    "label": "Schody",
-    "children": [
+    "model" : "stairs",
+    "type" : "fieldset",
+    "label" : "Schody",
+    "children" : [
       {
-        "type": "text",
-        "label": "Nazwa",
+        "type" : "text",
+        "label" : "Nazwa",
         "model": "stairsName"
       },
       {
