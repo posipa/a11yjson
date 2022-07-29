@@ -130,10 +130,10 @@
   },
   {
     "type": "bool",
-    "label": "Drzwi są przeźroczyste i [boolen] kontrastowo oznaczone.",
+    "label": "Drzwi są przeźroczyste i [boolean] kontrastowo oznaczone.",
     "model": "transparentDoors",
     "binding": {
-      "boolen": {
+      "boolean": {
         "type": "select",
         "label": "Czy drzwi są kontrastowo oznaczone",
         "model": "areDoorsOznakowane",

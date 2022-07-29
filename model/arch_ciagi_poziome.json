@@ -2,7 +2,7 @@
   {
     "type" : "radio",
     "label" : "Kondygnacja",
-    "model" : "howManyLavels",
+    "model" : "howManyLevels",
     "options" : {
       "1" : "Wszystkie pomieszczenia znajdują się na tym samym poziomie i na jednej kondygnacji, nie dotyczy wejścia i przestrzeni za wejściem.",
       "2" : "Pomieszczenia znajdują się na jednej kondygnacji, ale na różnych poziomach.",
@@ -13,7 +13,7 @@
       "number" : {
         "type" : "number",
         "label" : "Liczba kondygnacji na których znajduja się pomieszczenia",
-        "model" : "howManyLavelsCount"
+        "model" : "howManyLevelsCount"
       }
     }
   },

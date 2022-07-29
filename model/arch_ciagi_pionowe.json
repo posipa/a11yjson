@@ -34,12 +34,12 @@
       {
         "type": "bool",
         "label": "Stopień ma wysokość [stepHeight] centymetrów.",
-        "model": "stepHeigh",
+        "model": "stepHigh",
         "binding": {
           "stepHeight": {
             "type": "number",
             "label": "Wysokość stopnia",
-            "model": "stepHeighCount"
+            "model": "stepHighCount"
           }
         }
       },
@@ -156,7 +156,7 @@
         "binding": {
           "number": {
             "type": "text",
-            "label": "nr telefonu alarmowebo",
+            "label": "nr telefonu alarmowego",
             "model": "servicePhoneNumber"
           }
         }

@@ -98,6 +98,6 @@
     "type" : "bool",
     "label" : "Blat jest obniżony i może do niego podjechać osoba na wózku.",
     "model" : "isDeskProperHeight",
-    "Zaznacz to pole, jeżeli w punkcie obsługi lada jest obniżona do takiego poziomu, że może z niego korzystać osoba na wózku lub nisłorosła. Możesz zaznaczyć także wówczas, gdy punkt obsługi to zwykły stolik o standardowej wysokości." : ""
+    "desc" : "Zaznacz to pole, jeżeli w punkcie obsługi lada jest obniżona do takiego poziomu, że może z niego korzystać osoba na wózku lub nisłorosła. Możesz zaznaczyć także wówczas, gdy punkt obsługi to zwykły stolik o standardowej wysokości."
   }
 ]
