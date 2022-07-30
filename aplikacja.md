@@ -54,4 +54,5 @@ Na podstawie zebranych danych użytkownik może wygenerować następujące rapor
 1. Deklaracja dostępności architektonicznej i informacyjno-komunikacyjnej.
 2. Dane ustrukturalizowane w formie JSON-LD.
 3. Raport z audytu wraz z rekomendacjami.
+4. test 01
 
