@@ -57,4 +57,5 @@ Na podstawie zebranych danych użytkownik może wygenerować następujące rapor
 4. test 01
 5. test 02
 6. test 03
+7. test 04
 
