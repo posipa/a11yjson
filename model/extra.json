@@ -60,8 +60,7 @@
       {
         "model" : "covid-19",
         "type" : "bool",
-        "label" : "Prosimy o noszenie maseczek w budynku.",
-        "desc" : "test opisu"
+        "label" : "Prosimy o noszenie maseczek w budynku."
       },
       {
         "model" : "otherInfo",
