@@ -2,7 +2,7 @@
   {
     "model" : "additionalInformation",
     "label" : "Dodatkowe informacje",
-    "desc" : "2 Tu możesz podać dodatkowe informacje, które mogą być istotne dla klientów z niepełnosprawnościami. Ta część nie jest obowiązkowa, więc możesz ją pominąć.",
+    "desc" : "3 Tu możesz podać dodatkowe informacje, które mogą być istotne dla klientów z niepełnosprawnościami. Ta część nie jest obowiązkowa, więc możesz ją pominąć.",
     "children" : [
       {
         "model" : "ETRInfo",
