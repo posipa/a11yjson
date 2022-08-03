@@ -39,6 +39,7 @@
       "text" : {
         "type" : "text",
         "label" : "Rodzaj systemu dźwiękowego",
+        "length" : "10",
         "model" : "isAudioInformationSystemDesc"
       }
     },
