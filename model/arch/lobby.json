@@ -11,7 +11,7 @@
     "model" : "isTactilePlan",
     "binding" : {
       "text" : {
-        "type" : "text",
+        "type" : "textarea",
         "label" : "opis lokalizacji palnu dotykowego",
         "model" : "isTactilePlanDesc"
       }
