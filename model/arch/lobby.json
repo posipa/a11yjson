@@ -24,7 +24,7 @@
     "model" : "isLargePrintPlan",
     "binding" : {
       "text" : {
-        "type" : "text",
+        "type" : "textarea",
         "label" : "opis lokalizacji palnu rozmieszczeń",
         "model" : "isLargePrintPlanDesc"
       }
