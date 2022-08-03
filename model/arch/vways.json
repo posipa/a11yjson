@@ -96,7 +96,7 @@
         }
       },
       {
-        "type": "text",
+        "type": "textarea",
         "label": "Windę znajdziesz",
         "model": "elevatorLocationDesc"
       },
