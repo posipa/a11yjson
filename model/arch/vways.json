@@ -40,28 +40,5 @@
         "model" : "slopeAngle2Count"
       }
     }
-  },
-  {
-    "type" : "radio",
-    "label" : "Różnice poziomów",
-    "model" : "slopeAngle",
-    "options" : {
-      "1" : "Różnice poziomów można pokonać za pomocą pochylni o maksymalnym nachyleniu [slopeAngle1]%.",
-      "2" : "Wszystkie korytarze są dostępne.",
-      "3" : "Część korytarzy nie jest dostępna dla osób poruszających się na wózkach.",
-      "4" : "Wszystkie korytarze są niedostępne dla osób na wózkach."
-    },
-    "binding" : {
-      "slopeAngle1" : {
-        "type" : "number",
-        "label" : "Nachylenie w stopniach",
-        "model" : "slopeAngle1Count"
-      },
-      "slopeAngle2" : {
-        "type" : "number",
-        "label" : "Nachylenie w stopniach",
-        "model" : "slopeAngle2Count"
-      }
-    }
   }
 ]
