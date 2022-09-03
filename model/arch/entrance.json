@@ -1,13 +1,25 @@
 [
   {
+    "type" : "textarea",
+    "label" : "Dojście do wejścia głównego.",
+    "model" : "wayToEntrance",
+    "desc" : "Opisz dojście do głównego wejścia, szczególnie gdy jest skomplikowane lub wymaga dodatkowych czynności.",
+    "examples" : [
+      "Do wejścia głównego dojdziesz przez furtkę w ogrodzeniu. Od furtki prowadzi na wprost chodnik do wejścia. Zamknij furtkę.",
+      "Wejście główne znajduje się w bramie na podwórze, po lewej stronie."
+    ]
+  },
+  {
     "type" : "bool",
     "label" : "Wejście jest na poziomie gruntu. Nie ma przeszkód, by wjechać na wózku.",
-    "model" : "entranceOnGroundLevel"
+    "model" : "entranceOnGroundLevel",
+    "desc" : "Wejście na poziomie gruntu oznacza, że nie prowadzą do niego żadne schody lub pochylnia. Próg w wejściu nie może być większy, niż 2 centymetry."
   },
   {
     "type" : "bool",
     "label" : "Do wejścia prowadzą schody.",
-    "model" : "stairsLeadToEntrance"
+    "model" : "stairsLeadToEntrance",
+    "desc" : "Zaznacz to pole, jeżeli do wejścia prowadzi przynajmniej 1 stopień. Zaznacz niezależnie, czy jest także pochylnia lub inne rozwiązanie techniczne."
   },
   {
     "type" : "bool",
@@ -15,7 +27,8 @@
     "model" : "bumbBeforeStairs",
     "logic" : {
       "stairsLeadToEntrance" : " :ischecked"
-    }
+    },
+    "desc" : "Zaznacz to pole, jeżeli przed schodami jest położona nawierzchnia wyczuwalna pod butami, ostrzegająca przed początkiem schodów."
   },
   {
     "type" : "bool",
@@ -23,7 +36,8 @@
     "model" : "stairsAreContrasted",
     "logic" : {
       "stairsLeadToEntrance" : " :ischecked"
-    }
+    },
+    "desc" : "Zaznacz to pole, jeżeli przynajmniej pierwszy i ostatni stopień ciągu schodów jest oznaczony kontrastowo. Oznaczenie powinno być wykonane w taki sposób, by było widoczne zarówno podczas wchodzenia, jak i schodzenia. Jeżeli jest to tylko jeden stopień, to także powinien być oznaczony."
   },
   {
     "type" : "bool",
@@ -31,7 +45,8 @@
     "model" : "handLeadAlongStairs",
     "logic" : {
       "stairsLeadToEntrance" : " :ischecked"
-    }
+    },
+    "desc" : "Zaznacz to pole, jeżeli przy schodach znajduje się poręcz przynajmniej po jednej stronie."
   },
   {
     "type" : "bool",
@@ -43,120 +58,145 @@
         "label" : "Wartość nachylenia",
         "model" : "stairsLeadToEntrance1212"
       }
-    }
+    },
+    "desc" : "Zaznacz to pole, jeżeli do wejścia można się dostać stałą pochylnią. Stała oznacza, że jest na stałe przytwierdzona do powierzchni i nie ma możliwości, żeby ktoś ją odłączył. Kąt nachylenia podajesz w procentach, w zaokrągleniu do pełnych liczb. Jeżeli kąt nachylenia jest zmierzony w stopniach, to oblicz tangens takiego kąta. Procentowe nachylenie oblicza się dzieląc wysokość pochylni przez jej długość. Nie mierz do tego celu długości biegu pochylni, bo pojawi się błąd."
   },
   {
-    "type": "bool",
-    "label": "Istnieje możliwość rozłożenia przenośnej rampy. Zawiadom nas o tym wcześniej.",
-    "model": "mozliwoscPrzenosnejRampy"
+    "type" : "bool",
+    "label" : "Istnieje możliwość rozłożenia przenośnej rampy. Zawiadom nas o tym wcześniej.",
+    "model" : "mozliwoscPrzenosnejRampy",
+    "desc" : "Zaznacz to pole, jeżelimożna zadysponować rozłożenie rampy przenośnej, na przykład składanej. Jest to rozwiązanie gorsze od stałej pochylni, ale tymczasowo można je stosować."
   },
   {
-    "type": "bool",
-    "label": "Różnicę wysokości możesz pokonać za pomocą platformy przyschodowej.",
-    "model": "jestPlatformaPrzyschodowa"
+    "type" : "bool",
+    "label" : "Różnicę wysokości możesz pokonać za pomocą platformy przyschodowej.",
+    "model" : "jestPlatformaPrzyschodowa",
+    "desc" : "Zaznacz to pole, jeżeli schody lub inną przeszkodę można pokonać za pomocą platformy. Jest to rodzaj windy, ale bez kabiny lub z częściową kabiną, bez szybu."
   },
   {
-    "type": "textarea",
-    "label": "Dodatkowe informacje",
-    "model": "extraData"
+    "type" : "textarea",
+    "label" : "Dodatkowe informacje",
+    "model" : "extraData",
+    "desc" : "Tu możesz wpisać dodatkowe informacje przydatne dla osób z niepełnosprawnością. Na przykład jak obsługiwać platformę lub jak poinformować o konieczności rozłożenia rampy.",
+    "examples" : [
+      "Jeżeli potrzebujesz skorzystać z rozkładanej rampy - uprzedź nas o tym przynajmniej dzień wcześniej. Zadzwoń pod numer telefonu (22) 555 55 55. Podaj też godzinę planowanej wizyty.",
+      "Uwaga! Platforma przyschodowa jest otwierana przez pracownika ochrony. Naciśnij zielony przycisk na drzwiach platformy, żeby poinformować o potrzebie skorzystania."
+    ]
   },
   {
-    "type": "bool",
-    "label": "Przestrzeń manewrowa przed wejściem wynosi [number] centymetrów.",
-    "model": "przestrzenManewrowaPrzedWejsciem",
-    "binding": {
-      "number": {
-        "type": "number",
-        "label": "Wielkość przestrzeni manewrowej",
-        "model": "wielkoscPrzestrzeniManewrowej"
+    "type" : "bool",
+    "label" : "Przestrzeń manewrowa przed wejściem wynosi [number] centymetrów.",
+    "model" : "przestrzenManewrowaPrzedWejsciem",
+    "binding" : {
+      "number" : {
+        "type" : "number",
+        "label" : "Wielkość przestrzeni manewrowej",
+        "model" : "wielkoscPrzestrzeniManewrowej"
       }
+    },
+    "desc" : "Przestrzeń manewrowa to ta, po której bezpiecznie może się poruszać osoba na wózku. Zmierz długość i szerokość powierzchni i wpisz mniejszą z wartości. Uwzględnij przy tym wystające elementy konstrukcyjne i przestrzeń na otwarcie drzwi."
+  },
+  {
+    "type" : "bool",
+    "label" : "Drzwi są obrotowe.",
+    "model" : "whereDoor",
+    "desc" : "Zaznacz to pole, jeżeli do głównego wejścia prowadzą drzwi obrotowe. Nawet jeżeli obok są drzwi uchylne lub rozsuwane."
+  },
+  {
+    "type" : "bool",
+    "label" : "Drzwi otwierają się automatycznie.",
+    "model" : "autoDoor",
+    "desc" : "Zaznacz to pole, jeżeli drzwi otwierają się automatycznie, na przykład na fotokomórkę lub przez osobę z wewnątrz. Dla odwiedzających będzie to informacja, że nie muszą się szarpać z drzwiami, tylko muszą poczekać."
+  },
+  {
+    "type" : "bool",
+    "label" : "Drzwi są zawsze otwarte.",
+    "model" : "alwaysOpened",
+    "descZaznacz to pole, jeżeli drzwi lub inny rodzaj wejścia są zawsze otwarte i nie trzeba wykonywać dodatkowych czynności." : ""
+  },
+  {
+    "type" : "bool",
+    "label" : "Drzwi musisz otworzyć ręcznie.",
+    "model" : "mustHandOpen",
+    "desc" : "Zaznacz to pole, jeżeli do otwarcia drzwi trzeba użyć klamki lub innego mechanizmu."
+  },
+  {
+    "type" : "bool",
+    "label" : "Otwierają się na zewnątrz.",
+    "model" : "openToOutside",
+    "desc" : "Zaznacz to pole, jeżeli skrzydło drzwi otwiera się na zewnątrz budynku."
+  },
+  {
+    "type" : "radio",
+    "label" : "Siła potrzebna do otwarcia drzwi",
+    "model" : "openToOutside",
+    "options" : {
+      "1" : "Otworzenie drzwi nie wymaga dużej siły.",
+      "2" : "Otworzenie drzwi wymaga dużej siły.",
+      "Oceń subiektywnie, czy w otwarcie drzwi trzeba włożyć dużo, czy mało siły. Jeżeli korzystasz z norm określających tę siłę, skorzystaj z nich." : ""
     }
   },
   {
-    "type": "bool",
-    "label": "Drzwi są obrotowe.",
-    "model": "whereDoor"
+    "type" : "bool",
+    "label" : "Drzwi mają wygodną i ergonomiczną klamkę.",
+    "model" : "handyHandle"
   },
   {
-    "type": "bool",
-    "label": "Drzwi otwierają się automatycznie.",
-    "model": "autoDoor"
+    "type" : "bool",
+    "label" : "Można je łatwo utrzymać w pozycji otwartej.",
+    "model" : "easyToHold",
+    "desc" : "Zaznacz to pole, jeżeli drzwi można pozostawić otwarte i nie zamkną się samoczynnie. Drzwi mogą być dobrze wyważone, zaopatrzone w blokadę lub inne rozwiązanie utrzymujące je w pozycji otwartej."
   },
   {
-    "type": "bool",
-    "label": "Drzwi są zawsze otwarte.",
-    "model": "alwaysOpened"
-  },
-  {
-    "type": "bool",
-    "label": "Drzwi musisz otworzyć ręcznie.",
-    "model": "mustHandOpen"
-  },
-  {
-    "type": "bool",
-    "label": "Otwierają się na zewnątrz.",
-    "model": "openToOutside"
-  },
-  {
-    "type": "radio",
-    "label": "Siła potrzebna do otwarcia drzwi",
-    "model": "openToOutside",
-    "options": {
-      "1": "Otworzenie drzwi nie wymaga dużej siły.",
-      "2": "Otworzenie drzwi wymaga dużej siły."
-    }
-  },
-  {
-    "type": "bool",
-    "label": "Drzwi mają wygodną i ergonomiczną klamkę.",
-    "model": "handyHandle"
-  },
-  {
-    "type": "bool",
-    "label": "Można je łatwo utrzymać w pozycji otwartej.",
-    "model": "easyToHold"
-  },
-  {
-    "type": "bool",
-    "label": "Szerokość otworu wejściowego wynosi [number] centymetrów.",
-    "model": "widthOfOpenDoors",
-    "binding": {
-      "number": {
-        "type": "number",
-        "label": "Szerokość w cm",
-        "model": "widthOfOpenDoorsNumber"
+    "type" : "bool",
+    "label" : "Szerokość otworu wejściowego wynosi [number] centymetrów.",
+    "model" : "widthOfOpenDoors",
+    "binding" : {
+      "number" : {
+        "type" : "number",
+        "label" : "Szerokość w cm",
+        "model" : "widthOfOpenDoorsNumber"
       }
-    }
+    },
+    "desc" : "Zmierz szerokość otworu drzwiowego. Uwzględnij w tym kąt, na jaki można rozewrzeć drzwi i wystające elementy, na przykład klamki."
   },
   {
-    "type": "bool",
-    "label": "Drzwi są przeźroczyste i [boolean] kontrastowo oznaczone.",
-    "model": "transparentDoors",
-    "binding": {
-      "boolean": {
-        "type": "select",
-        "label": "Czy drzwi są kontrastowo oznaczone",
-        "model": "areDoorsOznakowane",
-        "options": {
-          "są": "są",
-          "nie są": "nie są"
+    "type" : "bool",
+    "label" : "Drzwi są przeźroczyste i [boolean] kontrastowo oznaczone.",
+    "model" : "transparentDoors",
+    "binding" : {
+      "boolean" : {
+        "type" : "select",
+        "label" : "Czy drzwi są kontrastowo oznaczone",
+        "model" : "areDoorsOznakowane",
+        "options" : {
+          "są" : "są",
+          "nie są" : "nie są"
         }
       }
-    }
+    },
+    "Zaznacz to pole, jeżeli drzwi są wykonane z przeźroczystego tworzywa, na przykład szkła. Chodzi o taki rodzaj materiału, który utrudnia zorientowanie się, czy drzwi są otwarte, czy zamknięte. Jeżeli drzwi nie są przeźroczyste - nie zaznaczaj, nawet jeżeli są ze szkła. Wybierz opcję, czy są oznaczone kontrastowo, czy nie. Kontrastowymi oznaczeniami mogą być żółte pasy naklejone na drzwi, reklamy namalowane lub taka konstrukcja drzwi, że zawsze widać, czy są otwarte." : ""
   },
   {
-    "type": "bool",
-    "label": "Skorzystaj z dzwonka przy drzwiach.",
-    "model": "useDoorBell"
+    "type" : "bool",
+    "label" : "Skorzystaj z dzwonka przy drzwiach.",
+    "model" : "useDoorBell",
+    "desc" : "Zaznacz to pole, jeżeli wejście przez drzwi wymaga skorzystania z dzwonka. Nie zaznaczaj, jeżeli dzwonek jest, ale nie ma konieczności używania go."
   },
   {
-    "type": "bool",
-    "label": "Skorzystaj z domofonu przy drzwiach.",
-    "model": "useDomofon"
+    "type" : "bool",
+    "label" : "Skorzystaj z domofonu przy drzwiach.",
+    "model" : "useDomofon",
+    "desc" : "Zaznacz to pole, jeżeli wejście do budynku wymaga skorzystania z domofonu lub wideofonu. Jeżeli domofon jest zamontowany, ale nie ma konieczności korzystania z niego, pozostaw pole nie zaznaczone."
   },
   {
-    "type": "textarea",
-    "label": "Jeżeli nie możesz skorzystać z głównego wejścia",
-    "model": "ifCantUseEntrance"
+    "type" : "textarea",
+    "label" : "Jeżeli nie możesz skorzystać z głównego wejścia",
+    "model" : "ifCantUseEntrance",
+    "desc" : "W tym miejscu możesz dodać informacje dla osób, dla których główne wejście nie jest dostępne. Opisz, z jakiego wejścia mogą skorzystać, gdzie się znajduje i elementy dostępności.",
+    "examples" : [
+      "Wejście z pochylnią znajduje się od tyłu budynku, przy drzwiach ewakuacyjnych. Proszę nacisnąć przycisk dzwonka i poczekać na otwarcie drzwi przez dozorcę. Za niedogodność przepraszamy.",
+      "Nie mamy wejścia, przez które może się dostać do budynku osoba na wózku. W szczególnych sytuacjach można skorzystać z pomocy pracowników technicznych. W tym celu proszę zadzwonić z wyprzedzeiem przynajmniej godziny na numer telefonu (22) 555 55 55."
+    ]
   }
 ]
