@@ -129,7 +129,7 @@
   {
     "type" : "radio",
     "label" : "Siła potrzebna do otwarcia drzwi",
-    "model" : "openToOutside",
+    "model" : "strengthToOpen",
     "options" : {
       "1" : "Otworzenie drzwi nie wymaga dużej siły.",
       "2" : "Otworzenie drzwi wymaga dużej siły."
