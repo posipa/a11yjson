@@ -112,7 +112,7 @@
     "type" : "bool",
     "label" : "Drzwi są zawsze otwarte.",
     "model" : "alwaysOpened",
-    "descZaznacz to pole, jeżeli drzwi lub inny rodzaj wejścia są zawsze otwarte i nie trzeba wykonywać dodatkowych czynności." : ""
+    "desc" : "descZaznacz to pole, jeżeli drzwi lub inny rodzaj wejścia są zawsze otwarte i nie trzeba wykonywać dodatkowych czynności."
   },
   {
     "type" : "bool",
@@ -132,9 +132,9 @@
     "model" : "openToOutside",
     "options" : {
       "1" : "Otworzenie drzwi nie wymaga dużej siły.",
-      "2" : "Otworzenie drzwi wymaga dużej siły.",
-      "Oceń subiektywnie, czy w otwarcie drzwi trzeba włożyć dużo, czy mało siły. Jeżeli korzystasz z norm określających tę siłę, skorzystaj z nich." : ""
-    }
+      "2" : "Otworzenie drzwi wymaga dużej siły."
+    },
+    "desc" : "Oceń subiektywnie, czy w otwarcie drzwi trzeba włożyć dużo, czy mało siły. Jeżeli korzystasz z norm określających tę siłę, skorzystaj z nich."
   },
   {
     "type" : "bool",
@@ -175,7 +175,7 @@
         }
       }
     },
-    "Zaznacz to pole, jeżeli drzwi są wykonane z przeźroczystego tworzywa, na przykład szkła. Chodzi o taki rodzaj materiału, który utrudnia zorientowanie się, czy drzwi są otwarte, czy zamknięte. Jeżeli drzwi nie są przeźroczyste - nie zaznaczaj, nawet jeżeli są ze szkła. Wybierz opcję, czy są oznaczone kontrastowo, czy nie. Kontrastowymi oznaczeniami mogą być żółte pasy naklejone na drzwi, reklamy namalowane lub taka konstrukcja drzwi, że zawsze widać, czy są otwarte." : ""
+    "desc" : "Zaznacz to pole, jeżeli drzwi są wykonane z przeźroczystego tworzywa, na przykład szkła. Chodzi o taki rodzaj materiału, który utrudnia zorientowanie się, czy drzwi są otwarte, czy zamknięte. Jeżeli drzwi nie są przeźroczyste - nie zaznaczaj, nawet jeżeli są ze szkła. Wybierz opcję, czy są oznaczone kontrastowo, czy nie. Kontrastowymi oznaczeniami mogą być żółte pasy naklejone na drzwi, reklamy namalowane lub taka konstrukcja drzwi, że zawsze widać, czy są otwarte."
   },
   {
     "type" : "bool",
