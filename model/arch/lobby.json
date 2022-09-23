@@ -43,7 +43,10 @@
         "model" : "isAudioInformationSystemDesc"
       }
     },
-    "desc" : "Zaznacz to pole, jeżeli w pomieszczeniu znajduje się jakiś system informacji głosowej, na przykład Totupoint. Podaj jego nazwę, żeby odwiedzający wiedzieli, jakiej aplikacji mobilnej lub aktywatora mają używać."
+    "desc" : "Zaznacz to pole, jeżeli w pomieszczeniu znajduje się jakiś system informacji głosowej, na przykład Totupoint. Podaj jego nazwę, żeby odwiedzający wiedzieli, jakiej aplikacji mobilnej lub aktywatora mają używać.",
+    "examples" : [
+      "Totupoint"
+    ]
   },
   {
     "type" : "bool",
@@ -56,7 +59,11 @@
         "model" : "hasTactileGuideStripsDesc"
       }
     },
-    "desc" : "Zaznacz to pole, jeżeli w pomieszczeniu znajduje się dotykowa ścieżka prowadząca dla osób niewidomych. Uzupełnij opis, żeby osoby niewidome wiedziały, dokąd dojdą korzystając z e ścieżki, na przykład \"do windy\", \"do recepcji\"."
+    "desc" : "Zaznacz to pole, jeżeli w pomieszczeniu znajduje się dotykowa ścieżka prowadząca dla osób niewidomych. Uzupełnij opis, żeby osoby niewidome wiedziały, dokąd dojdą korzystając z e ścieżki, na przykład \"do windy\", \"do recepcji\".",
+    "examples" : [
+      "do windy",
+      "do recepcji"
+    ]
   },
   {
     "type" : "bool",
