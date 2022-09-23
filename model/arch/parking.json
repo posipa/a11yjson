@@ -75,7 +75,11 @@
   {
     "type" : "textarea",
     "label" : "Opis usytuowania parkingu",
-    "desc" : "np.: Miejsca parkingowe znajdują się na dziedzińcu. Można na niego wjechać przez bramę. Szlaban otwiera strażnik, po okazaniu przepustki.",
+    "desc" : "",
+    "examples" : [
+      "Miejsca parkingowe znajdują się na dziedzińcu. Można na niego wjechać przez bramę.",
+      "Szlaban otwiera strażnik, po okazaniu przepustki."
+    ],
     "model" : "parkingLocation"
   }
 ]
