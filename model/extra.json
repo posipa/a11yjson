@@ -67,6 +67,12 @@
         "label" : "Pozostałe informacje",
         "type" : "textarea",
         "desc" : "Tu możesz wpisać jeszcze inne informacje, które uznasz za istotne."
+      },
+      {
+        "model" : "footer",
+        "type" : "bool",
+        "label" : "Deklaracja dostępności została przygotowana w <a href='https://deklaracja-dostepnosci.info/generator' external>Generatorze Deklaracji Dostępności.</a>.",
+        "desc" : "Będzie nam miło, jeżeli dodasz ten link do stopki deklaracji."
       }
     ]
   }

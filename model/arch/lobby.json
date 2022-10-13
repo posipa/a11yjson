@@ -5,13 +5,13 @@
     "model" : "lobbyDesc",
     "desc" : "Postaraj się opisać przestrzeń w taki sposób, by osoba z niepełnosprawnością wzroku miała orientację, czego może się spodziewać. Opisz gdzie szukać schodów, windy, punktu obsługi klienta, łazienki i podobnych elementów. Ostrzeż przed niebezpiecznymi elementami, na przykład kolejnymi schodkami w środku, śliską podłogą, wystającymi elementami.",
     "examples" : [
-      "Poczekalnia to prostokąt o bokach około 4 x 5 metrów. Na lewej ścianie jest okienko kasowe. Na ścianie naprzeciw wejścia są drzwi na peron numer 1. Drzwi są przy rogu z lewą ścianą. Pod prawą ścianą stoją ławki.",
-      "Hol to duża przestrzeń w kształcie kwadratu o boku 12 metrów. Dokładnie na wprost wejścia znajduje się recepcja, a na prawo od niej bramki wejściowe. Pod lewą i prawą ścianą rozmieszczone są nieregularnie stoliki i fotele. Przejście na wprost do recepcji nie ma przeszkód."
+      "Na wprost od wejścia, w odległości około 8 metrów znajduje się recepcja. Hol ma kształt kwadratu, a pod prawą i lewą ścianą znajdują się stoliki i fotele. Korytarz prowadzący do dalszej części budynku znajduje się obok recepcji po lewej stronie. Po prawej znajduje się wejście do toalety dla osób na wózkach.",
+      "Za drzwiami znajduje się korytarz prowadzący w lewo i w prawo. Wzdłuż korytarza znajdują się drzwi do pokojów o numerach od 1 do 10 patrząc od lewej. Na końcu korytarza po lewej stronie znajduje się wejście na klatkę schodową."
     ]
   },
   {
     "type" : "bool",
-    "label" : "Plan dotykowy rozmieszczenia pomieszczeń znajduje się [text]",
+    "label" : "Informacja dotykowa o rozmieszczeniu pomieszczeń znajduje się [text]",
     "model" : "isTactilePlan",
     "binding" : {
       "text" : {
@@ -20,7 +20,7 @@
         "model" : "isTactilePlanDesc"
       }
     },
-    "desc" : "Jeżeli w przestrzeni znajduje się plan rozmieszczenia pomieszczeń w postaci dotykowej, zaznacz to pole i uzupełnij opis. Dzięki temu osoba niewidoma będzie mogła go znaleźć.",
+    "desc" : "Jeżeli w przestrzeni znajduje się plan lub innego rodzaju informacja o rozmieszczeniu pomieszczeń w postaci dotykowej, zaznacz to pole i uzupełnij opis. Dzięki temu osoba niewidoma będzie mogła go znaleźć.",
     "examples" : [
       "Plan w postaci wypukłego rysunku znajduje się przy drzwiach po lewej stronie od wejścia. Umieszczony jest na postumencie wysokości 80 centymetrów.",
       "Wypukły rysunek planu obiektu możesz otrzymać w recepcji."
@@ -28,7 +28,7 @@
   },
   {
     "type" : "bool",
-    "label" : "Plan rozmieszczenia pomieszczeń znajduje się w [text] i jest wykonany w kontrastowych kolorach oraz dużymi czcionkami.",
+    "label" : "Informacja rozmieszczenia pomieszczeń znajduje się w [text] i jest wykonany w kontrastowych kolorach oraz dużymi czcionkami.",
     "model" : "isLargePrintPlan",
     "binding" : {
       "text" : {
