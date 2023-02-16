@@ -2,6 +2,7 @@
   {
     "model" : "arch",
     "label" : "Dostępność architektoniczna",
+    "id": "a11y-architektura",
     "desc" : "W sekcji dotyczącej dostępności architektonicznej opisujesz dostępność budynku. Opis jest podzielony na elementy, zgodnie ze ścieżką dostępu i wymaganiami z ustawy o dostępności cyfrowej stron internetowych i aplikacji mobilnych podmiotów publicznych i ustawy o zapewnieniu dostępności osobom ze szczególnymi potrzebami. Zaznaczając pole wyboru przy zdaniu sprawiasz, że znajdzie się ono w treści deklaracji. Do wypełnienia są także pola edycyjne, w które należy wpisać dodatkowe informacje, jak wymiar, kąt nachylenia, dodatkowy opis tekstowy itp.",
     "children" : [
       {
